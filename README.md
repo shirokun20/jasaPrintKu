@@ -1,7 +1,6 @@
 # jasa Print Ku
 Aplikasi ini diajukan sebagai pembelajaran baik yang awam ataupun yang sudah mahir.
 # Contoh hasil dari aplikasi ini
-## Contoh hasil dari aplikasi
 Splashscreen | Register | Login
 ------------ | ------------- | -------------
 <img src="https://github.com/shirokun20/jasaPrintKu/blob/master/sampleImage/sample_output.png" width="300"> | <img src="https://github.com/shirokun20/jasaPrintKu/blob/master/sampleImage/sample_output_2.png" width="300"> | <img src="https://github.com/shirokun20/jasaPrintKu/blob/master/sampleImage/sample_output_3.png" width="300">|
