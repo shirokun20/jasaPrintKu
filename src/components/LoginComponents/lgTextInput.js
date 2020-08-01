@@ -28,6 +28,7 @@ const LgTextInput = ({
             }]}
         >
             <TextInput
+                autoCapitalize="none"
                 keyboardType={keyboardType}
                 secureTextEntry={secureData}
                 style={[LgStyle.textInputStyle, {

@@ -82,7 +82,10 @@ const LandingPages = ({ navigation }) => {
                 <LcButton
                     text="DAFTAR"
                     callback={(e) => {
-
+                        setIsRoute(true);
+                        navigation.navigate('RegisterScreen', {
+                            toLanding: true,
+                        });
                     }}
                     bgColor={Constant.warnaShadow}
                 />

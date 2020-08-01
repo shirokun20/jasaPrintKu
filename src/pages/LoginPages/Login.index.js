@@ -19,6 +19,9 @@ const LoginPages = (props) => {
     // sengaja dipisah biar yang awam faham
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    // Props 
+    const { navigation, route } = props;
+    const { backRegister = false } = route.params;
     // ComponendDidMount versi hooks
     useEffect(() => {
         // Check Keyboard Focus
@@ -48,12 +51,20 @@ const LoginPages = (props) => {
     );
     //
     const DaftarKlik = (
-        <TouchableOpacity activeOpacity={0.2} style={[style.cardView, SsShadow]}>
+        <TouchableOpacity activeOpacity={0.2} style={[style.cardView, SsShadow]} onPress={() => {
+            if (backRegister) {
+                navigation.goBack();
+            } else {
+                navigation.navigate('RegisterScreen', {
+                    backLogin: true,
+                });
+            }
+        }}>
             <Text style={[LStyle.textContent, {
             color: Constant.warnaSemiRed,
         }]}>DAFTAR</Text>
         </TouchableOpacity>
-    )
+    );
     //
     const Footer = (
         <SafeAreaView style={{
@@ -61,7 +72,8 @@ const LoginPages = (props) => {
         }}>
             <LgContainer style={LgStyle.footerContainer}>
                 {/* Form Email */}
-                <LgTextInput 
+                <LgTextInput
+                    keyboardType="email-address"
                     placeholder="Email"
                     data={email}
                     setData={(text) => {
