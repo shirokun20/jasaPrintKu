@@ -1,6 +1,10 @@
 # jasaPrintKu
 Aplikasi ini diajukan sebagai pembelajaran baik yang awam ataupun yang sudah mahir.
-
+# Contoh hasil dari aplikasi ini
+## Login
+![alt text](https://github.com/shirokun20/jasaPrintKu/blob/master/sampleImage/sample_output.png)
+## Daftar
+![alt text](https://github.com/shirokun20/jasaPrintKu/blob/master/sampleImage/sample_output_2.png)
 # Cara installasi
 masuk directory jasaPrintKu -> lalu buka terminal/CMD -> ketik 'yarn' atau 'npm install'
 
