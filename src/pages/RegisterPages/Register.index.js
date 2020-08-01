@@ -138,7 +138,7 @@ const RegisterPages = (props) => {
                 {TextBtn('Ketentuan layanan', () => {})}
                 <Text> dan </Text>
                 {TextBtn('Kebijakan privasi', () => {})}
-                <Text> Kami</Text>
+                <Text> kami</Text>
             </View>
         </View>
     );
