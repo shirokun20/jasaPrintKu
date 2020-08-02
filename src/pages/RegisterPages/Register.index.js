@@ -10,9 +10,9 @@ import {
 } from 'react-native';
 //
 import { APP_DEVELOPMENT } from '~/config/app.config';
-import { RgContainer, RgRadioCheck } from '../../components/RegisterComponents/rgData';
-import { LgBarStyle } from '../../components/LoginComponents/lgData';
-import { RgStyle } from '../../components/RegisterComponents/rgStyle';
+import { RgContainer, RgRadioCheck } from '~/components/RegisterComponents/rgData';
+import { LgBarStyle } from '~/components/LoginComponents/lgData';
+import { RgStyle } from '~/components/RegisterComponents/rgStyle';
 import { LgStyle } from '~/components/LoginComponents/lgStyle';
 import { LStyle } from '~/components/LandingComponents/lcStyle';
 import { SsLogo } from '~/components/SplashScreenComponents/ssLogo';
@@ -184,7 +184,7 @@ const RegisterPages = (props) => {
                 {!inputFocus ? JkContainer : null}
                 {/* Button MASUK */}
                 {!inputFocus ? <LcButton
-                    text="DAFTAR!"
+                    text="DAFTAR"
                     callback={(e) => {
 
                     }}
