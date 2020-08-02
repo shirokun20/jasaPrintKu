@@ -1,7 +1,7 @@
 # jasa Print Ku
 Aplikasi ini diajukan sebagai pembelajaran baik yang awam ataupun yang sudah mahir.
 # Contoh hasil dari aplikasi ini
-Splash Screen | Register | Login
+Landing Page | Register | Login
 ------------ | ------------- | -------------
 <img src="https://github.com/shirokun20/jasaPrintKu/blob/master/sampleImage/sample_output.png" width="300"> | <img src="https://github.com/shirokun20/jasaPrintKu/blob/master/sampleImage/sample_output_2.png" width="300"> | <img src="https://github.com/shirokun20/jasaPrintKu/blob/master/sampleImage/sample_output_3.png" width="300">|
 # Cara installasi
@@ -16,7 +16,7 @@ jangan lupa bila menggunakan linux untuk menjalankan server debugnya dengan cara
 ## Untuk ios
 
 setelah selesai installasi -> buka terminal/CMD -> ketik `yarn start:ios` atau `npx react-native run-ios`
-jangan lupa bila menggunakan linux untuk menjalankan server debugnya dengan cara `yarn start` atau `npm start`
+jangan lupa bila menggunakan Mac Os untuk menjalankan server debugnya dengan cara `yarn start` atau `npm start`
 
 ## Untuk Macos dan windows
 
