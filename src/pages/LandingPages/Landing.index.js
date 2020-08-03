@@ -11,7 +11,7 @@ import SsAppName from '~/components/SplashScreenComponents/ssAppName';
 import SsModeDevelopment from '~/components/SplashScreenComponents/ssModeDevelop';
 import LcButton from '~/components/LandingComponents/lcButton';
 
-const LandingPages = ({ navigation }) => {
+const LandingScreen = ({ navigation }) => {
     // Agar tau udah klik berapa kali (backhardware)
     const [isRoute, setIsRoute] = useState(true);
     //
@@ -109,4 +109,4 @@ const LandingPages = ({ navigation }) => {
     )
 };
 
-export default LandingPages;
+export default LandingScreen;

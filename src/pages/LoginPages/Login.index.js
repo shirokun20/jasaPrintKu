@@ -13,7 +13,7 @@ import SsModeDevelopment from '~/components/SplashScreenComponents/ssModeDevelop
 import LgTextInput from '~/components/LoginComponents/lgTextInput';
 import LcButton from '~/components/LandingComponents/lcButton';
 
-const LoginPages = (props) => {
+const LoginScreen = (props) => {
     // set ketika keyboard muncul
     const [inputFocus, setInputFocus] = useState(false);
     // sengaja dipisah biar yang awam faham
@@ -150,4 +150,4 @@ const LoginPages = (props) => {
     )
 };
 
-export default LoginPages;
+export default LoginScreen;

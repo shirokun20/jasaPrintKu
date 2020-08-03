@@ -8,7 +8,7 @@ import { SsLogo } from '~/components/SplashScreenComponents/ssLogo';
 import SsAppName from '~/components/SplashScreenComponents/ssAppName';
 import SsModeDevelopment from '~/components/SplashScreenComponents/ssModeDevelop';
 
-const SplashScreenPages = (props) => {
+const SplashScreen = (props) => {
     //
     useEffect(() => {
         setTimeout(() => {
@@ -60,4 +60,4 @@ const SplashScreenPages = (props) => {
     );
 };
 
-export default SplashScreenPages;
+export default SplashScreen;

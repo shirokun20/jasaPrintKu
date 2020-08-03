@@ -9,7 +9,8 @@ import {
 // Screen Login And Friend
 import { 
     LoginPages, 
-    RegisterPages
+    RegisterPages,
+    VerificationPages,
 } from '~/pages';
 //
 const Stack = createStackNavigator();
@@ -26,6 +27,13 @@ const ScreenLoginAndFriend = (
         <Stack.Screen 
             name="RegisterScreen"
             component={RegisterPages}
+            options={{
+                headerShown: false,
+            }}
+        />
+        <Stack.Screen 
+            name="VerificationScreen"
+            component={VerificationPages}
             options={{
                 headerShown: false,
             }}

@@ -1,6 +1,8 @@
-import { StyleSheet, Platform } from 'react-native';
+import { StyleSheet, Platform, Dimensions } from 'react-native';
 //
-import { Constant } from "~/constants/index.constants";
+import { Constant } from '~/constants/index.constants';
+//
+const { width, height } = Dimensions.get('window');
 //
 export const LgStyle = StyleSheet.create({
     textContent: {
@@ -47,7 +49,7 @@ export const LgStyle = StyleSheet.create({
         }),
         color: Constant.warnaShadow,
         height: Platform.select({
-            ios: 45,
+            ios: width > 405 ? 45 : 35,
         }),
     }
 })

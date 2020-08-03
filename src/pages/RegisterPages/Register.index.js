@@ -7,6 +7,7 @@ import {
     SafeAreaView,
     View,
     Text,
+    Dimensions,
 } from 'react-native';
 //
 import { APP_DEVELOPMENT } from '~/config/app.config';
@@ -18,12 +19,15 @@ import { LStyle } from '~/components/LandingComponents/lcStyle';
 import { SsLogo } from '~/components/SplashScreenComponents/ssLogo';
 import { SsShadow } from '~/components/SplashScreenComponents/ssShadow';
 import { Constant } from '~/constants/index.constants';
+import { ModalLoading } from '~/components/GlobalComponents/ModalLoading';
 import SsAppName, { style } from '~/components/SplashScreenComponents/ssAppName';
 import SsModeDevelopment from '~/components/SplashScreenComponents/ssModeDevelop';
 import LgTextInput from '~/components/LoginComponents/lgTextInput';
 import LcButton from '~/components/LandingComponents/lcButton';
-
-const RegisterPages = (props) => {
+//
+const { width, height } = Dimensions.get('window');
+//
+const RegisterScreen = (props) => {
     // state
     const [inputFocus, setInputFocus] = useState(false);
     const [email, setEmail] = useState('');
@@ -31,6 +35,7 @@ const RegisterPages = (props) => {
     const [nama, setNama] = useState('');
     const [noTelp, setNoTelp] = useState('');
     const [jk, setJk] = useState('lk');
+    const [loading, setLoading] = useState(false);
     //
     const { navigation, route } = props;
     const { backLogin = false, } = route.params;
@@ -53,11 +58,11 @@ const RegisterPages = (props) => {
     const Content = (
         <RgContainer style={[LgStyle.contentContainer, {
             flex: inputFocus ? Platform.select({
-                ios: 1,
+                ios: width > 405 ? 1 : 0.7,
                 android: 1.8
-            }) : 0.8,
+            }) : width > 405 ? 1 : 0.7,
         }]}>
-            <SsLogo ukuran={150} />
+            <SsLogo ukuran={width > 405 ? 150 : 120} />
             <SsAppName />
         </RgContainer>
     );
@@ -114,12 +119,12 @@ const RegisterPages = (props) => {
     const TextBtn = (text = '', callback) => {
         return (
             <TouchableOpacity onPress={(e) => callback(e)} activeOpacity={0.6}>
-                <Text style={{
+                <Text style={[{
                     fontWeight: Platform.select({
                         ios: '600',
                         android: 'bold',
                     }),
-                }}>{ text }</Text>
+                }, RgStyle.fontIos]}>{ text }</Text>
             </TouchableOpacity>
         )
     }
@@ -127,18 +132,20 @@ const RegisterPages = (props) => {
     const ContentAturan = (
         <View style={{
             alignItems: 'center',
-            marginVertical: 10,
+            marginVertical: Platform.select({
+                ios: width > 405 ? 10 : 5
+            }),
         }}>
-            <Text>Dengan membuat akun, anda telah menyetujui</Text>
+            <Text style={RgStyle.fontIos}>Dengan membuat akun, anda telah menyetujui</Text>
             <View style={{
                 flexDirection: 'row',
                 alignItems: 'center',
                 justifyContent: 'center',
             }}>
                 {TextBtn('Ketentuan layanan', () => {})}
-                <Text> dan </Text>
+                <Text style={RgStyle.fontIos}> dan </Text>
                 {TextBtn('Kebijakan privasi', () => {})}
-                <Text> kami</Text>
+                <Text style={RgStyle.fontIos}> kami</Text>
             </View>
         </View>
     );
@@ -186,7 +193,11 @@ const RegisterPages = (props) => {
                 {!inputFocus ? <LcButton
                     text="DAFTAR"
                     callback={(e) => {
-
+                        setLoading(true);
+                        setTimeout(() => {
+                            setLoading(false);
+                            navigation.navigate('VerificationScreen');
+                        }, 2000);
                     }}
                 /> : null}
                 { !inputFocus ? ContentAturan : null}
@@ -194,14 +205,26 @@ const RegisterPages = (props) => {
                 {!inputFocus ? <View style={[{
                     alignItems: 'center',
                     flexDirection: 'row',
-                    marginTop: 10,
-                    marginBottom: 10
+                    marginTop: Platform.select({
+                        ios: width > 405 ? 10 : 5
+                    }),
+                    marginBottom: Platform.select({
+                        ios: width > 405 ? 10 : 10
+                    })
                 }]}>
                     <Text style={LStyle.textContent}>Sudah punya akun ? </Text>
                     {LoginKlik}
                 </View> : null}
             </RgContainer>
         </SafeAreaView>
+    );
+    //
+    const modalComponent = (
+        <View>
+            <ModalLoading 
+                isLoading={loading}
+            />
+        </View>
     )
     //
     return (
@@ -233,8 +256,9 @@ const RegisterPages = (props) => {
                     {Footer}
                 </TouchableOpacity>
             </KeyboardAvoidingView>
+            {modalComponent}
         </RgContainer>
     );
 }
 
-export default RegisterPages;
+export default RegisterScreen;

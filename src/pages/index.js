@@ -4,10 +4,13 @@ import LandingPages from './LandingPages/Landing.index';
 // Yang bersangkut paut dengan login dan register
 import LoginPages from './LoginPages/Login.index';
 import RegisterPages from './RegisterPages/Register.index';
+import VerificationPages from './VerificationPages/Verification.index';
+//
 export {
     SplashScreenPages,
     LandingPages,
     // Khusu Login dan register
     LoginPages,
     RegisterPages,
+    VerificationPages,
 }
