@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import { 
-  View, 
-  Text, 
-  KeyboardAvoidingView, 
-  TouchableOpacity, 
-  SafeAreaView, 
-  Keyboard, 
-  Platform, 
-  Dimensions 
+import {
+  View,
+  Text,
+  KeyboardAvoidingView,
+  TouchableOpacity,
+  SafeAreaView,
+  Keyboard,
+  Platform,
+  Dimensions
 } from 'react-native';
 //
 import { APP_DEVELOPMENT } from '~/config/app.config';
@@ -21,6 +21,8 @@ import { SsShadow } from '~/components/SplashScreenComponents/ssShadow';
 import { LStyle } from '~/components/LandingComponents/lcStyle';
 import { VtStyle } from '~/components/VerificationComponents/vtStyle';
 import SsAppName, { style } from '~/components/SplashScreenComponents/ssAppName';
+import { ModalLoading } from '../../components/GlobalComponents/ModalLoading';
+import { ModalAlert } from '../../components/GlobalComponents/ModalAlert';
 //
 const { width, height } = Dimensions.get('window');
 
@@ -31,16 +33,49 @@ class VerificationScreen extends Component {
 
   state = {
     inputFocus: false,
-    maxInput: 5
+    maxInput: 5,
+    alertSuccessVisible: false,
+    alertSuccess: false,
+    alertSuccessText: '',
+    isLoading: false,
   };
+
+
+  verificationCheck = (value = '') => {
+    const { maxInput } = this.state;
+    if (value.length >= maxInput) {
+      this.setState({
+        isLoading: true,
+      });
+
+      setTimeout(() => {
+        this.setState({
+          isLoading: false,
+        });
+        this.alertShow();
+      }, 2000);
+    }
+  }
+
+  alertShow = () => {
+    setTimeout(() => {
+      this.setState({
+        alertSuccessVisible: true,
+        alertSuccessText: 'Gagal melakukan verifikasi nomor handphone dan email!'
+      });
+    }, 500);
+  }
 
   render() {
 
     const {
       inputFocus,
       maxInput,
+      alertSuccessVisible,
+      alertSuccess,
+      alertSuccessText,
+      isLoading
     } = this.state;
-
     //
     const Content = (
       <VtContainer style={[LgStyle.contentContainer, {
@@ -51,9 +86,9 @@ class VerificationScreen extends Component {
       }]}
       >
         <SsLogo ukuran={Platform.select({
-            android: 150,
-            ios: width > 405 ? 150 : 110
-          })} />
+          android: 150,
+          ios: width > 405 ? 150 : 110
+        })} />
         <SsAppName />
       </VtContainer>
     );
@@ -88,7 +123,7 @@ class VerificationScreen extends Component {
       <TouchableOpacity activeOpacity={0.2} style={[style.cardView, SsShadow, {
         marginTop: 5,
       }]} onPress={() => {
-        
+
       }}>
         <Text style={[LStyle.textContent, {
           color: Constant.warnaSemiRed,
@@ -113,12 +148,10 @@ class VerificationScreen extends Component {
             })}
             maxInput={maxInput}
             width="100%"
-            callback={(value) => {
-              console.log(value);
-            }}
+            callback={(value) => this.verificationCheck(value)}
           />
         </VtContainer>
-        { !inputFocus ? (
+        {!inputFocus ? (
           <View style={{
             alignItems: 'center',
             justifyContent: 'center',
@@ -129,7 +162,24 @@ class VerificationScreen extends Component {
         ) : null}
       </SafeAreaView>
     );
-
+    //
+    const AlertModal = (
+      <View>
+        <ModalLoading
+          isLoading={isLoading}
+        />
+        <ModalAlert 
+          alertSuccess={alertSuccess}
+          isVisible={alertSuccessVisible}
+          alertText={alertSuccessText}
+          callback={() => {
+            this.setState({
+              alertSuccessVisible: false,
+            })
+          }}
+        />
+      </View>
+    );
     return (
       <VtContainer>
         <VtBarStyle bStyle={Platform.select({
@@ -158,6 +208,7 @@ class VerificationScreen extends Component {
             {Footer}
           </TouchableOpacity>
         </KeyboardAvoidingView>
+        {AlertModal}
       </VtContainer>
     );
   }
