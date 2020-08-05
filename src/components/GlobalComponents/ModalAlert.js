@@ -3,7 +3,7 @@ import { Text, View, Modal, StyleSheet, Image, Platform, TouchableOpacity } from
 //
 import { Constant } from '~/constants/index.constants';
 import { CHECKED_ICON, UNCHECKED_ICON } from '~/assets/index.assets';
-import { SsShadow } from '../SplashScreenComponents/ssShadow';
+import { SsShadow } from '~/components/SplashScreenComponents/ssShadow';
 
 const ModalAlert = ({ isVisible, alertText, callback, alertSuccess }) => {
 

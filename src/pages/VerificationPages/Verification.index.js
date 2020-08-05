@@ -21,8 +21,8 @@ import { SsShadow } from '~/components/SplashScreenComponents/ssShadow';
 import { LStyle } from '~/components/LandingComponents/lcStyle';
 import { VtStyle } from '~/components/VerificationComponents/vtStyle';
 import SsAppName, { style } from '~/components/SplashScreenComponents/ssAppName';
-import { ModalLoading } from '../../components/GlobalComponents/ModalLoading';
-import { ModalAlert } from '../../components/GlobalComponents/ModalAlert';
+import { ModalLoading } from '~/components/GlobalComponents/ModalLoading';
+import { ModalAlert } from '~/components/GlobalComponents/ModalAlert';
 //
 const { width, height } = Dimensions.get('window');
 
