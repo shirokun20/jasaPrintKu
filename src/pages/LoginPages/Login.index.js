@@ -96,7 +96,12 @@ const LoginScreen = (props) => {
                 { !inputFocus ? <LcButton 
                     text="MASUK!"
                     callback={(e) => {
-                        
+                        navigation.reset({
+                            index: 0,
+                            routes: [{
+                                name: 'BerandaScreen',
+                            }]
+                        });
                     }}
                 /> : null }
                 {/* Daftar Klik */}

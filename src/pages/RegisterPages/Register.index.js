@@ -60,7 +60,7 @@ const RegisterScreen = (props) => {
             flex: inputFocus ? Platform.select({
                 ios: width > 405 ? 1 : 0.7,
                 android: 1.8
-            }) : width > 405 ? 1 : 0.7,
+            }) : width > 405 ? 0.8 : 0.7,
         }]}>
             <SsLogo ukuran={width > 405 ? 150 : 120} />
             <SsAppName />

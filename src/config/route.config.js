@@ -12,6 +12,10 @@ import {
     RegisterPages,
     VerificationPages,
 } from '~/pages';
+// Halaman Utama/beranda
+import { 
+    BerandaPages,
+} from '~/pages';
 //
 const Stack = createStackNavigator();
 // Screen Anak Buah login dan register dan antek2 nay :D
@@ -59,11 +63,24 @@ const ScreenPembuka = (
         /> 
     </>
 );
+// screen Halaman Utama
+const ScreenBerandaDll = (
+    <>
+        <Stack.Screen 
+            name="BerandaScreen"
+            component={BerandaPages}
+            options={{
+                headerShown: false,
+            }}
+        />
+    </>
+);
 // 
 const NavigatorStack = (
     <Stack.Navigator initialRouteName="SplashScreen">
         {ScreenPembuka}
         {ScreenLoginAndFriend}
+        {ScreenBerandaDll}
     </Stack.Navigator>
 )
 //
