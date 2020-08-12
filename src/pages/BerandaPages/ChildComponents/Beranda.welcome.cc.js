@@ -1,5 +1,6 @@
 import React from 'react';
 import { Text, View, Image, Platform } from 'react-native';
+import LinearGradient from 'react-native-linear-gradient';
 //
 import { Constant } from '~/constants/index.constants';
 import { SsShadow } from '~/components/SplashScreenComponents/ssShadow';
@@ -50,20 +51,22 @@ const ComponentBawah = (
         marginTop: 15,
         alignItems: 'center',
     }}>
-        <Text style={{
+        <Text style={[{
             fontSize: 20,
             fontWeight: Platform.select({
                 ios: '600',
                 android: 'bold',
             }),
             color: Constant.warnaPutih,
-        }}>{APP_MOTTO}</Text>
+        }]}>{APP_MOTTO}</Text>
     </View>
 )
 //
 const Bwc = (props) => (
-    <BcContainer
-        bgColor={Constant.warnaSemiRed}
+    <LinearGradient
+        start={{x: 0, y: 0}} 
+        end={{x: 3, y: 0}}
+        colors={[Constant.warnaSemiRed, Constant.warnaPutih]}
         style={[BcStyle.bgTop]}
     >
         <BcContainer
@@ -73,7 +76,7 @@ const Bwc = (props) => (
             { ComponentAtas }
             { ComponentBawah}
         </BcContainer>
-    </BcContainer>
+    </LinearGradient>
 );
 
 export default Bwc;

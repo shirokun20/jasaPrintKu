@@ -6,7 +6,8 @@ import LoginPages from './LoginPages/Login.index';
 import RegisterPages from './RegisterPages/Register.index';
 import VerificationPages from './VerificationPages/Verification.index';
 // Komponen halaman utama
-import BerandaPages from './BerandaPages/Beranda.index';
+// import BerandaPages from './BerandaPages/Beranda.index';
+import HalamanUtamaPages from './HalamanUtamaPages/HalamanUtama.index';
 //
 export {
     SplashScreenPages,
@@ -15,6 +16,6 @@ export {
     LoginPages,
     RegisterPages,
     VerificationPages,
-    // Khusus Halaman beranda dll
-    BerandaPages,
+    // Khusus Halaman utama dll
+    HalamanUtamaPages,
 }

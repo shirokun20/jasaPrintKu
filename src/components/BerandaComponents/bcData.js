@@ -22,7 +22,7 @@ const BcBarStyle = ({ bStyle = 'dark-content', bColor = 'transparent' }) => (
 const BcStyle = StyleSheet.create({
     cardTengah: {
         alignSelf: 'center',
-        width: '80%',
+        width: '95%',
         height: 85,
         backgroundColor: Constant.warnaPutih,
         position: 'absolute',
@@ -70,6 +70,19 @@ const BcStyle = StyleSheet.create({
         justifyContent: 'center',
         borderRadius: width,
         marginRight: 10,
+    },
+    containerBawah: {
+        width: '100%',
+        height: Platform.select({
+            ios: heightSisaPart1,
+            android: heightSisaPart1,
+        }),
+        backgroundColor: Constant.warnaPutih,
+        paddingTop: '12%',
+        zIndex: 0,
+        position: 'absolute',
+        bottom: 0,
+        alignSelf: 'center',
     }
 })
 

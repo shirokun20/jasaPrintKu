@@ -99,7 +99,7 @@ const LoginScreen = (props) => {
                         navigation.reset({
                             index: 0,
                             routes: [{
-                                name: 'BerandaScreen',
+                                name: 'HalamanUtamaScreen',
                             }]
                         });
                     }}

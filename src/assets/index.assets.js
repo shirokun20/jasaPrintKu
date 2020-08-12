@@ -6,3 +6,5 @@ export const CHECKED_ICON = require('~/assets/png_icon/checked_1.png');
 export const UNCHECKED_ICON = require('~/assets/png_icon/unchecked.png');
 export const USER_ICON = require('~/assets/png_icon/users.png');
 export const SHIRO_ICON = require('~/assets/png_icon/shiro.png');
+// JPEG
+export const SAMPEL_IKLAN_JPEG = require('~/assets/jpeg_icon/iklan.jpg');

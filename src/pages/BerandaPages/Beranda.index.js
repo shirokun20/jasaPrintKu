@@ -1,17 +1,17 @@
 import React from 'react';
-import { Text, View, Dimensions, Platform, Image, TouchableOpacity } from 'react-native';
+import { Text, View, Dimensions, Platform, Image, TouchableOpacity, ScrollView } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 //
 import { BcContainer, BcBarStyle, BcStyle } from '../../components/BerandaComponents/bcData';
 import { Constant } from '../../constants/index.constants';
 import { SsShadow } from '../../components/SplashScreenComponents/ssShadow';
+import { SAMPEL_IKLAN_JPEG } from '../../assets/index.assets';
 import Bwc from './ChildComponents/Beranda.welcome.cc';
 //
 const { height, width } = Dimensions.get('screen');
 //
-const heightTampilanBesar = (height * (29 / 100));
+const heightTampilanBesar = parseInt(height * (29 / 100));
 const heightSisaPart1 = height - heightTampilanBesar;
-// const heightSisaPart2 = height - 200;
 const BerandaScreen = (props) => {
     //
     const dataContent = [{
@@ -64,23 +64,66 @@ const BerandaScreen = (props) => {
         </View>
     );
     //
+    const HeaderContentBawah = (
+        <View style={{
+            width: '95%',
+            alignSelf: 'center',
+            marginBottom: 5,
+        }}>
+            <Text>8 TRANSAKSI TERAKHIR</Text>
+        </View>
+    );
+    // Sample Content = 
+    const sampleContent = (
+        <View style={[{
+            marginTop: 1,
+            marginBottom: 10,
+            width: '99%',
+            height: 95,
+            borderRadius: 3,
+            backgroundColor: Constant.warnaPutih,
+        }, SsShadow]} />
+    );
+    //
+    const ContentBawahView = (
+        <View style={{
+            width: '95%',
+            height: Platform.select({
+                ios: '84%',
+                android: '84%',
+            }),
+            alignSelf: 'center',
+        }}>
+            <ScrollView style={{
+                width: '100%',
+                height: '100%',
+            }} contentContainerStyle={{
+                alignItems: 'center',
+            }}>
+                { sampleContent }
+                { sampleContent }
+                { sampleContent }
+                { sampleContent }
+                { sampleContent }
+                { sampleContent }
+                { sampleContent }
+                { sampleContent }
+            </ScrollView>
+        </View>
+    );
+    //
     const ContentBawah = (
         <BcContainer
-            style={[{
-                width: '100%',
-                height: Platform.select({
-                    ios: heightSisaPart1,
-                    android: heightSisaPart1,
-                }),
-                zIndex: 0,
-            }]}
+            style={[BcStyle.containerBawah]}
         >
+            { HeaderContentBawah }
+            { ContentBawahView }
         </BcContainer>
     );
     // Content 
     const Content = (
         <BcContainer style={{
-            // justifyContent: 'space-between',
+            height: height
         }}>
             {ContentAtas}
             {ContentBawah}

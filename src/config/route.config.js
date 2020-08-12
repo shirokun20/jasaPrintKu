@@ -14,7 +14,7 @@ import {
 } from '~/pages';
 // Halaman Utama/beranda
 import { 
-    BerandaPages,
+    HalamanUtamaPages,
 } from '~/pages';
 //
 const Stack = createStackNavigator();
@@ -67,8 +67,8 @@ const ScreenPembuka = (
 const ScreenBerandaDll = (
     <>
         <Stack.Screen 
-            name="BerandaScreen"
-            component={BerandaPages}
+            name="HalamanUtamaScreen"
+            component={HalamanUtamaPages}
             options={{
                 headerShown: false,
             }}
