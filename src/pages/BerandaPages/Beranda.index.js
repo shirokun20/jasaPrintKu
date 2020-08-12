@@ -89,8 +89,8 @@ const BerandaScreen = (props) => {
         <View style={{
             width: '95%',
             height: Platform.select({
-                ios: '84%',
-                android: '84%',
+                ios: '83.5%',
+                android: '83.5%',
             }),
             alignSelf: 'center',
         }}>
