@@ -3,14 +3,14 @@ Aplikasi ini diajukan sebagai pembelajaran baik yang awam ataupun yang sudah mah
 # Contoh hasil dari aplikasi ini
 ## Contoh tampilan di ios
 ###
-Landing | Register | Login | Beranda
------------- | ------------- | ------------- | -------------
-<img src="https://github.com/shirokun20/jasaPrintKu/blob/master/sampleImage/sample_output.png" width="300"> | <img src="https://github.com/shirokun20/jasaPrintKu/blob/master/sampleImage/sample_output_2.png" width="300"> | <img src="https://github.com/shirokun20/jasaPrintKu/blob/master/sampleImage/sample_output_3.png" width="300"> | <img src="https://github.com/shirokun20/jasaPrintKu/blob/master/sampleImage/sample_output_4.png" width="300">
+Landing | Register | Login | 
+------------ | ------------- | ------------- |
+<img src="https://github.com/shirokun20/jasaPrintKu/blob/master/sampleImage/sample_output.png" width="300"> | <img src="https://github.com/shirokun20/jasaPrintKu/blob/master/sampleImage/sample_output_2.png" width="300"> | <img src="https://github.com/shirokun20/jasaPrintKu/blob/master/sampleImage/sample_output_3.png" width="300"> | 
 
 ###
-Splash Screen | Otp |
----------------- | ---------------- |
-<img src="https://github.com/shirokun20/jasaPrintKu/blob/master/sampleImage/sample_output_5.png" width="300"> | <img src="https://github.com/shirokun20/jasaPrintKu/blob/master/sampleImage/sample_output_6.png" width="300"> |
+Splash Screen | Otp | Beranda
+---------------- | ---------------- | ----------------
+<img src="https://github.com/shirokun20/jasaPrintKu/blob/master/sampleImage/sample_output_5.png" width="300"> | <img src="https://github.com/shirokun20/jasaPrintKu/blob/master/sampleImage/sample_output_6.png" width="300"> | <img src="https://github.com/shirokun20/jasaPrintKu/blob/master/sampleImage/sample_output_4.png" width="300">
 # Cara installasi
 masuk directory jasaPrintKu -> lalu buka terminal/CMD -> ketik `yarn` atau `npm install`
 
