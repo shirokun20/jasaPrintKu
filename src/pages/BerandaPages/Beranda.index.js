@@ -89,8 +89,8 @@ const BerandaScreen = (props) => {
         <View style={{
             width: '95%',
             height: Platform.select({
-                ios: '83.5%',
-                android: '83.5%',
+                ios: '82%',
+                android: '85%',
             }),
             alignSelf: 'center',
         }}>
@@ -99,7 +99,7 @@ const BerandaScreen = (props) => {
                 height: '100%',
             }} contentContainerStyle={{
                 alignItems: 'center',
-            }}>
+            }} showsVerticalScrollIndicator={false}>
                 { sampleContent }
                 { sampleContent }
                 { sampleContent }
@@ -131,7 +131,9 @@ const BerandaScreen = (props) => {
     );
 
     return (
-        <BcContainer>
+        <BcContainer style={{
+
+        }}>
             {/* Status Bar Custom :D */}
             <BcBarStyle bStyle="light-content" />
             {/* Content */}
