@@ -8,5 +8,5 @@ export const SsShadow = {
     },
     shadowOpacity: 0.20,
     shadowRadius: 1.41,
-    elevation: 1.5,
+    elevation: 1.7,
 }
