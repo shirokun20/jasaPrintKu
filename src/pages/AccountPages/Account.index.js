@@ -143,6 +143,15 @@ const AccountScreen = (props) => {
                 rightText=""
                 allowRight={true}
             />
+            <View style={{
+                padding: 5,
+                alignItems: 'center',
+            }}>
+                <Text style={{
+                    fontSize: 11,
+                    color: Constant.warnaSemiRed,
+                }}>Dibuat oleh {APP_PEMBUAT}</Text>
+            </View>
         </View>
     );
     return (

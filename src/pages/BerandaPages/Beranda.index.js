@@ -1,11 +1,10 @@
 import React from 'react';
-import { Text, View, Dimensions, Platform, Image, TouchableOpacity, ScrollView } from 'react-native';
+import { Text, View, Dimensions, Platform, TouchableOpacity, TouchableHighlight, ScrollView } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 //
 import { BcContainer, BcBarStyle, BcStyle } from '../../components/BerandaComponents/bcData';
 import { Constant } from '../../constants/index.constants';
 import { SsShadow } from '../../components/SplashScreenComponents/ssShadow';
-import { SAMPEL_IKLAN_JPEG } from '../../assets/index.assets';
 import Bwc from './ChildComponents/Beranda.welcome.cc';
 //
 const { height, width } = Dimensions.get('screen');
@@ -29,7 +28,7 @@ const BerandaScreen = (props) => {
         <TouchableOpacity key={index} style={{
             alignItems: 'center',
             flex: 1,
-        }} activeOpacity={0.5}>
+        }}>
             <View style={{
                 marginBottom: 5,
             }}>
@@ -75,14 +74,92 @@ const BerandaScreen = (props) => {
     );
     // Sample Content = 
     const sampleContent = (
-        <View style={[{
+        <TouchableHighlight style={[{
             marginTop: 1,
             marginBottom: 10,
             width: '99%',
-            height: 95,
-            borderRadius: 3,
+            borderRadius: 5,
             backgroundColor: Constant.warnaPutih,
-        }, SsShadow]} />
+        }, SsShadow]} underlayColor={Constant.warnaSemiPutih} onPress={() => { }}>
+            <View style={{
+                flexDirection: 'row',
+                justifyContent: 'space-between',
+                paddingHorizontal: 5,
+                paddingVertical: 5,
+            }}>
+                <View>
+                    <View style={{
+                        marginBottom: 20,
+                    }}>
+                        <Text style={{
+                            fontSize: 20,
+                            color: Constant.warnaAlertError,
+                            fontWeight: Platform.select({
+                                android: 'bold',
+                                ios: '600',
+                            })
+                        }}>#INV0001</Text>
+                    </View>
+                    <View style={{
+                        marginTop: 5,
+                    }}>
+                        <View>
+                            <Text style={{
+                                fontSize: 15
+                            }}>Rp. 10.000</Text>
+                        </View>
+                        <View>
+                            <Text style={{
+                                fontSize: 15,
+                                color: Constant.warnaAlertSuccess,
+                                fontWeight: 'bold',
+                            }}>On Process</Text>
+                        </View>
+                    </View>
+                </View>
+                <View style={{
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                }}>
+                    <View style={[{
+                        backgroundColor: Constant.warnaSemiRed,
+                        paddingVertical: 10,
+                        paddingHorizontal: 15,
+                        alignItems: 'center',
+                        borderRadius: 5,
+                        marginBottom: 2,
+                    }, SsShadow]}>
+                        <Text style={{
+                            color: Constant.warnaPutih,
+                            fontSize: 20,
+                            fontWeight: Platform.select({
+                                android: 'bold',
+                                ios: '600',
+                            })
+                        }}>27</Text>
+                        <Text style={{
+                            color: Constant.warnaPutih,
+                            fontWeight: Platform.select({
+                                android: 'bold',
+                                ios: '600',
+                            })
+                        }}>Sep</Text>
+                    </View>
+                    <View style={{
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                    }}>
+                        <Text style={{
+                            fontWeight: Platform.select({
+                                android: 'bold',
+                                ios: '600',
+                            }),
+                            fontSize: 18,
+                        }}>2020</Text>
+                    </View>
+                </View>
+            </View>
+        </TouchableHighlight>
     );
     //
     const ContentBawahView = (
@@ -100,14 +177,14 @@ const BerandaScreen = (props) => {
             }} contentContainerStyle={{
                 alignItems: 'center',
             }} showsVerticalScrollIndicator={false}>
-                { sampleContent }
-                { sampleContent }
-                { sampleContent }
-                { sampleContent }
-                { sampleContent }
-                { sampleContent }
-                { sampleContent }
-                { sampleContent }
+                {sampleContent}
+                {sampleContent}
+                {sampleContent}
+                {sampleContent}
+                {sampleContent}
+                {sampleContent}
+                {sampleContent}
+                {sampleContent}
             </ScrollView>
         </View>
     );
@@ -116,8 +193,8 @@ const BerandaScreen = (props) => {
         <BcContainer
             style={[BcStyle.containerBawah]}
         >
-            { HeaderContentBawah }
-            { ContentBawahView }
+            {HeaderContentBawah}
+            {ContentBawahView}
         </BcContainer>
     );
     // Content 
