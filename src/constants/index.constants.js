@@ -10,6 +10,7 @@ export const Constant = {
     warnaAlertSuccess: '#a3d179',
     warnaAlertError: '#bf3d27',
     warnaSemiGrey: '#e0e0e0',
+    warnaGreyLight: '#aeaeae',
     warnaBiru: '#2196f3',
     textModeDevelopment: 'Anda sedang dalam mode development',
     textTitleVerifikasi: 'Kode Verifikasi',

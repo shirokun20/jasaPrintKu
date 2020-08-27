@@ -24,7 +24,7 @@ export const LgStyle = StyleSheet.create({
         justifyContent: 'flex-end',
         height: '100%',
         paddingBottom: Platform.select({
-            android: 10,
+            android: 15,
             ios: 0,
         }),
     },

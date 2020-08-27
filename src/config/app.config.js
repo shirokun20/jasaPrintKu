@@ -4,5 +4,5 @@ export const APP_VERSION = Package.version;
 export const APP_FIRST_NAME = Package.firstName;
 export const APP_SECONDARY_NAME = Package.SecondaryName;
 export const APP_PEMBUAT = Package.pembuat;
-export const APP_DEVELOPMENT = true;
+export const APP_DEVELOPMENT = Package.development_mode;
 export const APP_MOTTO = Package.motto;

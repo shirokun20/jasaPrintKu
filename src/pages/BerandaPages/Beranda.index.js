@@ -13,21 +13,30 @@ const heightTampilanBesar = parseInt(height * (29 / 100));
 const heightSisaPart1 = height - heightTampilanBesar;
 const BerandaScreen = (props) => {
     //
+    const { navigate } = props.navigation;
+    //
     const dataContent = [{
         name: 'Pesan',
         icon: 'shopping-cart',
+        routeKe: null,
     }, {
         name: 'Riwayat',
-        icon: 'history'
+        icon: 'history',
+        routeKe: null,
     }, {
         name: 'Produk',
-        icon: 'print'
+        icon: 'print',
+        routeKe: 'ProdukScreen',
     }];
     //
     const PanelTengahContent = dataContent.map((e, index) => (
         <TouchableOpacity key={index} style={{
             alignItems: 'center',
             flex: 1,
+        }} onPress={() => {
+            if (e.routeKe !== null) {
+                navigate(e.routeKe);
+            }
         }}>
             <View style={{
                 marginBottom: 5,

@@ -8,6 +8,7 @@ import VerificationPages from './VerificationPages/Verification.index';
 // Komponen halaman utama
 // import BerandaPages from './BerandaPages/Beranda.index';
 import HalamanUtamaPages from './HalamanUtamaPages/HalamanUtama.index';
+import ProdukPages from './ProdukPages/Produk.index';
 //
 export {
     SplashScreenPages,
@@ -18,4 +19,5 @@ export {
     VerificationPages,
     // Khusus Halaman utama dll
     HalamanUtamaPages,
+    ProdukPages,
 }

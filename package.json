@@ -5,6 +5,7 @@
   "pembuat": "SHIRO'Soft",
   "motto": "Jasa ngeprint murah dan cepat",
   "version": "0.1.0",
+  "development_mode": true,
   "private": true,
   "scripts": {
     "android": "react-native run-android",

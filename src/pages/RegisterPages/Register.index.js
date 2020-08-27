@@ -133,7 +133,8 @@ const RegisterScreen = (props) => {
         <View style={{
             alignItems: 'center',
             marginVertical: Platform.select({
-                ios: width > 405 ? 10 : 5
+                ios: width > 405 ? 10 : 5,
+                android: 10,
             }),
         }}>
             <Text style={RgStyle.fontIos}>Dengan membuat akun, anda telah menyetujui</Text>
@@ -206,10 +207,10 @@ const RegisterScreen = (props) => {
                     alignItems: 'center',
                     flexDirection: 'row',
                     marginTop: Platform.select({
-                        ios: width > 405 ? 10 : 5
+                        ios: width > 405 ? 10 : 5,
                     }),
                     marginBottom: Platform.select({
-                        ios: width > 405 ? 10 : 10
+                        ios: width > 405 ? 10 : 10,
                     })
                 }]}>
                     <Text style={LStyle.textContent}>Sudah punya akun ? </Text>
