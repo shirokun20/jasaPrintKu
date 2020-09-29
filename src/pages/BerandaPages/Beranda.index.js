@@ -10,17 +10,17 @@ import Bwc from './ChildComponents/Beranda.welcome.cc';
 const { height, width } = Dimensions.get('screen');
 //
 const heightTampilanBesar = parseInt(height * (29 / 100));
-const heightSisaPart1 = height - heightTampilanBesar;
+// const heightSisaPart1 = height - heightTampilanBesar;
 const BerandaScreen = (props) => {
     //
     const { navigate } = props.navigation;
     //
     const dataContent = [{
-        name: 'Pesan',
+        name: 'Pesan Jasa',
         icon: 'shopping-cart',
         routeKe: null,
     }, {
-        name: 'Riwayat',
+        name: 'Riwayat Order',
         icon: 'history',
         routeKe: null,
     }, {
@@ -49,6 +49,8 @@ const BerandaScreen = (props) => {
             </View>
             <Text style={{
                 color: Constant.warnaHitam,
+                fontSize: 12,
+                textAlign: 'center',
             }}>{e.name.toUpperCase()}</Text>
         </TouchableOpacity>
     ));

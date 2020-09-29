@@ -7,12 +7,13 @@ import { BcBarStyle } from '../../components/BerandaComponents/bcData';
 import CPComponent from '../../components/ProdukComponents/CPComponent';
 
 const ProdukScreen = ({
-    params,
+    navigation,
+    route,
 }) => {
 
     const BackAndCartHeader = (
         <View style={Style.containerParentHeader}>
-            <TouchableOpacity style={Style.containerBackButton} activeOpacity={0.6}>
+            <TouchableOpacity style={Style.containerBackButton} activeOpacity={0.6} onPress={() => navigation.goBack()}>
                 <Icon
                     name="keyboard-arrow-left"
                     size={30}
@@ -53,7 +54,7 @@ const ProdukScreen = ({
                 style={Style.inputTextStyle}
             />
         </View>
-    )
+    );  
 
     const Header = (
         <View style={[Style.containerHeader, SsShadow]}>
