@@ -1,29 +1,18 @@
 import React from 'react';
-import { Text, View, Animated, Platform, TouchableOpacity, TextInput } from 'react-native';
+import { Text, View, Platform, TouchableOpacity, TextInput, StyleSheet, ScrollView, SafeAreaView } from 'react-native';
 import { Constant } from '../../constants/index.constants';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import { SsShadow } from '../../components/SplashScreenComponents/ssShadow';
 import { BcBarStyle } from '../../components/BerandaComponents/bcData';
+import CPComponent from '../../components/ProdukComponents/CPComponent';
 
 const ProdukScreen = ({
     params,
 }) => {
 
     const BackAndCartHeader = (
-        <View style={{
-            flexDirection: 'row',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            marginHorizontal: 5,
-        }}>
-            <TouchableOpacity style={[{
-                borderRadius: 25,
-                backgroundColor: Constant.warnaSemiGrey,
-                alignItems: 'center',
-                justifyContent: 'center',
-                width: 40,
-                height: 40,
-            }]} activeOpacity={0.6}>
+        <View style={Style.containerParentHeader}>
+            <TouchableOpacity style={Style.containerBackButton} activeOpacity={0.6}>
                 <Icon
                     name="keyboard-arrow-left"
                     size={30}
@@ -38,26 +27,12 @@ const ProdukScreen = ({
                         name="shopping-cart"
                         size={30}
                         style={{
-                            left: -1.5,
                             alignSelf: 'center',
                         }}
                     />
                 </View>
-                <View style={[{
-                    backgroundColor: 'red',
-                    width: 15,
-                    height: 15,
-                    position: 'absolute',
-                    right: 0,
-                    borderRadius: 10,
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                }, SsShadow]}>
-                    <Text style={{
-                        color: Constant.warnaPutih,
-                        fontSize: 10,
-                        fontWeight: 'bold',
-                    }}>
+                <View style={[Style.containerBadge, SsShadow]}>
+                    <Text style={Style.textBadge}>
                         1
                     </Text>
                 </View>
@@ -66,107 +41,72 @@ const ProdukScreen = ({
     );
 
     const HeaderSearch = (
-        <View style={[{
-            marginTop: 10,
-            marginHorizontal: 5,
-            backgroundColor: Constant.warnaSemiGrey,
-            paddingHorizontal: 8,
-            height: 40,
-            borderRadius: 40,
-            justifyContent: 'flex-start',
-            alignItems: 'center',
-            flexDirection: 'row',
-        }, SsShadow]}>
+        <View style={[Style.containerHeaderSearch, SsShadow]}>
             <Icon
                 name="search"
                 size={28}
-                style={{
-                    padding: 0,
-                    marginRight: 5,
-                }}
+                style={Style.iconHeaderSearch}
             />
             <TextInput
                 placeholder="Cari produk"
                 placeholderTextColor={Constant.warnaGreyLight}
-                style={{
-                    width: '90%',
-                    height: 40,
-                    padding: 0,
-                    fontSize: 20,
-                }}
+                style={Style.inputTextStyle}
             />
         </View>
     )
 
     const Header = (
-        <View style={[{
-            backgroundColor: Constant.warnaPutih,
-            width: '100%',
-            paddingTop: Platform.select({
-                ios: '12%',
-                android: 40,
-            }),
-            paddingBottom: 15,
-        }, SsShadow]}>
-            { BackAndCartHeader }
-            { HeaderSearch }
+        <View style={[Style.containerHeader, SsShadow]}>
+            {BackAndCartHeader}
+            {HeaderSearch}
         </View>
     );
-
-    const ContentData = (
-        <View style={[{
-            width: '48%',
-            height: 170,
-            backgroundColor: Constant.warnaPutih,
-            marginBottom: 10,
-            borderRadius: 10,
-        }, SsShadow]}>
-            <View style={{
-                borderTopStartRadius: 10,
-                borderTopEndRadius: 10,
-                width: '100%',
-                height: 100,
-                backgroundColor: Constant.warnaGreyLight
-            }} />
-            <View style={{
-                paddingHorizontal: 5,
-                paddingVertical: 5,
-                flex: 1,
-            }}>
-                <Text numberOfLines={2}>Judul barang</Text>
-                <Text numberOfLines={1} style={{
-                    fontWeight: Platform.select({
-                        ios: '600',
-                        android: 'bold',
-                    }),
-                    marginTop: 5,
-                }}>Rp. 0</Text>
-            </View>
-        </View>
-    )
-
     //
     const Content = (
         <View>
-            <View style={{
-            paddingVertical: 10,
-            paddingHorizontal: 8,
-        }}>
-                <Text style={{
-                    fontSize: 15,
-                    color: Constant.warnaHitam,
-                }}>Produk Kami</Text>
+            <View style={Style.containerContentHeader}>
+                <Text style={Style.textHeaderContent}>Produk Kami</Text>
             </View>
-            <View style={{
-                flexDirection: 'row',
-                flexWrap: 'wrap',
-                justifyContent: 'space-between',
-                paddingHorizontal: 8,
+            <SafeAreaView style={{
+                height: '86.5%',
             }}>
-                {ContentData}
-                {ContentData}
-            </View>
+                <ScrollView>
+                    <View style={Style.containerContent}>
+                        <CPComponent />
+                        <CPComponent />
+                        <CPComponent />
+                        <CPComponent />
+                        <CPComponent />
+                        <CPComponent />
+                        <CPComponent />
+                        <CPComponent />
+                        <CPComponent />
+                        <CPComponent />
+                        <CPComponent />
+                    </View>
+                </ScrollView>
+            </SafeAreaView>
         </View>
+    );
+    //
+    const Footer = (
+        <TouchableOpacity style={[Style.containerFooter, SsShadow]} activeOpacity={0.9}>
+            <View style={Style.containerParentFooter}>
+                <View style={{
+                    flex: 1,
+                }}>
+                    <Text style={Style.textFooter1} numberOfLines={1}>1 Item</Text>
+                    <Text style={{
+                        color: Constant.warnaPutih,
+                    }} numberOfLines={1}>Yang ditambahkan ke pembelian!</Text>
+                </View>
+                <View>
+                    <View>
+                        <Text style={Style.textFooter1}>10.000 IDR</Text>
+                    </View>
+                </View>
+            </View>
+        </TouchableOpacity>
     )
 
     return (
@@ -175,10 +115,106 @@ const ProdukScreen = ({
             flex: 1,
         }}>
             <BcBarStyle bStyle="dark-content" />
-            { Header }
-            { Content }
+            {Header}
+            {Content}
+            {Footer}
         </View>
     );
 };
+
+const Style = StyleSheet.create({
+    containerContentHeader: {
+        paddingVertical: 10,
+        paddingHorizontal: 8,
+    },
+    textHeaderContent: {
+        fontSize: 15,
+        color: Constant.warnaHitam,
+    },
+    containerContent: {
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        justifyContent: 'space-between',
+        paddingHorizontal: 8,
+    },
+    containerHeader: {
+        backgroundColor: Constant.warnaPutih,
+        width: '100%',
+        paddingTop: Platform.select({
+            ios: '12%',
+            android: 40,
+        }),
+        paddingBottom: 15,
+    },
+    containerHeaderSearch: {
+        marginTop: 10,
+        marginHorizontal: 5,
+        backgroundColor: Constant.warnaSemiGrey,
+        paddingHorizontal: 8,
+        height: 40,
+        borderRadius: 40,
+        justifyContent: 'flex-start',
+        alignItems: 'center',
+        flexDirection: 'row',
+    },
+    iconHeaderSearch: {
+        padding: 0,
+        marginRight: 5,
+    },
+    inputTextStyle: {
+        width: '90%',
+        height: 40,
+        padding: 0,
+        fontSize: 20,
+    },
+    containerParentHeader: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        marginHorizontal: 5,
+    },
+    containerBackButton: {
+        borderRadius: 25,
+        backgroundColor: Constant.warnaSemiGrey,
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: 40,
+        height: 40,
+    },
+    containerBadge: {
+        backgroundColor: 'red',
+        width: 15,
+        height: 15,
+        position: 'absolute',
+        right: 0,
+        borderRadius: 10,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    textBadge: {
+        color: Constant.warnaPutih,
+        fontSize: 10,
+        fontWeight: 'bold',
+    },
+    containerFooter: {
+        position: 'absolute',
+        bottom: 15,
+        width: '95%',
+        alignSelf: 'center',
+        backgroundColor: Constant.warnaSemiRed,
+        padding: 10,
+        borderRadius: 10,
+    },
+    containerParentFooter: {
+        width: '100%',
+        alignItems: 'center',
+        flexDirection: 'row',
+        justifyContent: 'space-between'
+    },
+    textFooter1: {
+        color: Constant.warnaPutih,
+        fontWeight: 'bold',
+    }
+})
 
 export default ProdukScreen;
