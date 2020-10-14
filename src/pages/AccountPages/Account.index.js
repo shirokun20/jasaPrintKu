@@ -157,10 +157,7 @@ const AccountScreen = (props) => {
     return (
         <View style={{
             width: '100%',
-            height: Platform.select({
-                ios: '91%',
-                android: '93%',
-            }),
+            height: '100%',
             backgroundColor: Constant.warnaPrimaryButton,
         }}>
             {Header}

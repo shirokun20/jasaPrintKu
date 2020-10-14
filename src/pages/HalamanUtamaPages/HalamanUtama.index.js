@@ -167,11 +167,11 @@ const Styles = StyleSheet.create({
             android: 5
         }),
         paddingTop: 8,
-        borderTopLeftRadius: 10,
-        borderTopRightRadius: 10,
+        borderRadius: 150,
         position: 'absolute',
-        bottom: 0,
-        width: '100%',
+        bottom: 8,
+        width: '70%',
+        alignSelf: 'center',
         borderWidth: 0.5,
         borderColor: '#e0e0e0'
     },

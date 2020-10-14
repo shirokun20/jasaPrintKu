@@ -206,10 +206,7 @@ const BerandaScreen = (props) => {
     const ContentBawahView = (
         <View style={{
             width: '95%',
-            height: Platform.select({
-                ios: '82%',
-                android: '85%',
-            }),
+            height: '100%',
             alignSelf: 'center',
         }}>
             <ScrollView style={{
@@ -226,6 +223,11 @@ const BerandaScreen = (props) => {
                 {sampleContent}
                 {sampleContent}
                 {sampleContent}
+                <View 
+                    style={{
+                        height: 100,
+                    }}
+                />
             </ScrollView>
         </View>
     );
