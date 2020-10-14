@@ -7,9 +7,10 @@ import { SsShadow } from '../SplashScreenComponents/ssShadow';
 const CPComponent = ({
     judul_barang = 'Lorem',
     dilihat = 1,
+    onPress,
 }) => {
     return  (
-        <TouchableOpacity style={[Style.container, SsShadow]} activeOpacity={0.8}>
+        <TouchableOpacity style={[Style.container, SsShadow]} activeOpacity={0.8} onPress={() => onPress()}>
             <View style={Style.img} />
             <View style={Style.content}>
                 <Text numberOfLines={2}>{judul_barang}</Text>
@@ -53,5 +54,9 @@ const Style = StyleSheet.create({
         marginBottom: 5,
     }
 })
+
+CPComponent.defaultProps = {
+    onPress: () => {},
+}
 
 export default CPComponent;

@@ -19,15 +19,24 @@ const BerandaScreen = (props) => {
         name: 'Pesan Jasa',
         icon: 'shopping-cart',
         routeKe: null,
+        pager: 0,
     }, {
         name: 'Riwayat Order',
         icon: 'history',
         routeKe: null,
+        pager: 0,
     }, {
-        name: 'Produk',
-        icon: 'print',
-        routeKe: 'ProdukScreen',
-    }];
+        name: 'Notifikasi',
+        icon: 'envelope-o',
+        routeKe: null,
+        pager: 10,
+    }, 
+    // {
+    //     name: 'Produk',
+    //     icon: 'print',
+    //     routeKe: 'ProdukScreen',
+    // }
+];
     //
     const PanelTengahContent = dataContent.map((e, index) => (
         <TouchableOpacity key={index} style={{
@@ -37,7 +46,7 @@ const BerandaScreen = (props) => {
             if (e.routeKe !== null) {
                 navigate(e.routeKe);
             }
-        }}>
+        }} activeOpacity={0.8}>
             <View style={{
                 marginBottom: 5,
             }}>
@@ -46,6 +55,27 @@ const BerandaScreen = (props) => {
                     size={30}
                     color={Constant.warnaHitam}
                 />
+                {
+                    e.pager > 0 ? (
+                        <View style={{
+                            position: 'absolute',
+                            right: -5,
+                            top: -3,
+                            width: 18,
+                            height: 18,
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            backgroundColor: Constant.warnaSemiRed,
+                            borderRadius: 18,
+                        }}>
+                            <Text style={{
+                                color: Constant.warnaPutih,
+                                fontWeight: 'bold',
+                                fontSize: 12,
+                            }}>{e.pager}</Text>
+                        </View>
+                    ) : null
+                }
             </View>
             <Text style={{
                 color: Constant.warnaHitam,
@@ -80,7 +110,7 @@ const BerandaScreen = (props) => {
             alignSelf: 'center',
             marginBottom: 5,
         }}>
-            <Text>8 TRANSAKSI TERAKHIR</Text>
+            <Text>8 ORDER AKTIF</Text>
         </View>
     );
     // Sample Content = 

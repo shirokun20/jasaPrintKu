@@ -73,7 +73,11 @@ const ProdukScreen = ({
             }}>
                 <ScrollView>
                     <View style={Style.containerContent}>
-                        <CPComponent />
+                        <CPComponent 
+                            onPress={() => {
+                                navigation.navigate('DetailProdukScreen');
+                            }}
+                        />
                         <CPComponent />
                         <CPComponent />
                         <CPComponent />
