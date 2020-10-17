@@ -17,7 +17,9 @@ import {
     HalamanUtamaPages,
     ProdukPages,
     DetailProdukPages,
+    PesanJasaPages,
 } from '~/pages';
+import { Constant } from '../constants/index.constants';
 //
 const Stack = createStackNavigator();
 // Screen Anak Buah login dan register dan antek2 nay :D
@@ -90,6 +92,18 @@ const ScreenBerandaDll = (
             options={{
                 headerBackTitle: false,
                 headerBackTitleVisible: false,
+            }}
+        />
+        <Stack.Screen 
+            name="PesanJasaScreen"
+            component={PesanJasaPages}
+            options={{
+                headerBackTitle: false,
+                headerBackTitleVisible: false,
+                headerTitleAlign: 'center',
+                headerTitle: 'Pesan Jasa',
+                headerTintColor: Constant.warnaPutih,
+                headerTransparent: true,
             }}
         />
     </>

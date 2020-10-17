@@ -18,7 +18,7 @@ const BerandaScreen = (props) => {
     const dataContent = [{
         name: 'Pesan Jasa',
         icon: 'shopping-cart',
-        routeKe: null,
+        routeKe: 'PesanJasaScreen',
         pager: 0,
     }, {
         name: 'Riwayat Order',
@@ -212,7 +212,8 @@ const BerandaScreen = (props) => {
             <ScrollView style={{
                 width: '100%',
                 height: '100%',
-            }} contentContainerStyle={{
+            }} 
+            contentContainerStyle={{
                 alignItems: 'center',
             }} showsVerticalScrollIndicator={false}>
                 {sampleContent}

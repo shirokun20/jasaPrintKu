@@ -75,30 +75,36 @@ const AccountScreen = (props) => {
         </View>
     );
     //
-    const ContentKhusus = ({ leftText = '', rightText = '', allowRight = true }) => {
+    const ContentKhusus = ({
+        leftText = '',
+        rightText = '',
+        allowRight = true,
+    }) => {
         return (
-            <View style={[Style.cardContent, {
-                paddingRight: allowRight ? 5 : 10,
-            }]}>
-                <View style={Style.cardContentContainerLeft}>
-                    <Text style={Style.cardText}>{leftText}</Text>
+            <TouchableOpacity activeOpacity={0.8}>
+                <View style={[Style.cardContent, {
+                    paddingRight: allowRight ? 5 : 10,
+                }]}>
+                    <View style={Style.cardContentContainerLeft}>
+                        <Text style={Style.cardText}>{leftText}</Text>
+                    </View>
+                    <View style={Style.cardContentContainerRight}>
+                        <Text style={[{
+                            marginRight: allowRight ? 5 : 0,
+                            color: Constant.warnaBiru,
+                        }, Style.cardText]}>{rightText}</Text>
+                        {
+                            allowRight ? (
+                                <IconAnt
+                                    name="right"
+                                    size={20}
+                                    color={Constant.warnaSemiGrey}
+                                />
+                            ) : null
+                        }
+                    </View>
                 </View>
-                <View style={Style.cardContentContainerRight}>
-                    <Text style={[{
-                        marginRight: allowRight ? 5 : 0,
-                        color: Constant.warnaBiru,
-                    }, Style.cardText]}>{rightText}</Text>
-                    {
-                        allowRight ? (
-                            <IconAnt
-                                name="right"
-                                size={20}
-                                color={Constant.warnaSemiGrey}
-                            />
-                        ) : null
-                    }
-                </View>
-            </View>
+            </TouchableOpacity>
         );
     }
     //

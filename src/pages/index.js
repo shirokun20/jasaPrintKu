@@ -10,6 +10,7 @@ import VerificationPages from './VerificationPages/Verification.index';
 import HalamanUtamaPages from './HalamanUtamaPages/HalamanUtama.index';
 import ProdukPages from './ProdukPages/Produk.index';
 import DetailProdukPages from './DetailProdukPages/DetailProduk.index';
+import PesanJasaPages from './PesanJasaPages/PesanJasa.index';
 //
 export {
     SplashScreenPages,
@@ -22,4 +23,5 @@ export {
     HalamanUtamaPages,
     ProdukPages,
     DetailProdukPages,
+    PesanJasaPages,
 }
