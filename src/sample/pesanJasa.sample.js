@@ -1,7 +1,7 @@
 export const PesanJasaSample = {
     paymentMethod: [
         {
-            text: 'Dbayar di tempat',
+            text: 'Dbayar di lokasi anda',
             payment_method_id: 1,
             keterangan: '',
         },

@@ -101,7 +101,7 @@ const ScreenBerandaDll = (
                 headerBackTitle: false,
                 headerBackTitleVisible: false,
                 headerTitleAlign: 'center',
-                headerTitle: 'Pesan Jasa',
+                headerTitle: 'Pesan Jasa Print',
                 headerTintColor: Constant.warnaPutih,
                 headerTransparent: true,
             }}
