@@ -119,10 +119,10 @@ export const CardMetodeBayar = (props) => {
                         )
                     }) : null}
                 </Animated.View>
-                <Text style={[StylePsn.textHeaderInfo, {
+                {/* <Text style={[StylePsn.textHeaderInfo, {
                     fontSize: 15,
                     color: Constant.warnaSemiRed
-                }]}>* Total yang harus dibayar setelah print selesai</Text>
+                }]}>* Total yang harus dibayar setelah print selesai</Text> */}
             </View>
 
         </View>

@@ -44,7 +44,7 @@ export const CardSendMethod = (props) => {
 
     return (
         <View style={[StylePsn.cardFile, SsShadow, {
-            paddingRight: 3,
+            paddingRight: 4,
             borderTopEndRadius: 15,
             borderTopStartRadius: 11,
             borderBottomEndRadius: 15,
