@@ -136,7 +136,6 @@ CardMetodeBayar.defaultProps = {
 const StyleCmb = StyleSheet.create({
     container: {
         paddingLeft: 4,
-        backgroundColor: Constant.warnaSemiRed,
         borderTopEndRadius: 11,
         borderBottomEndRadius: 11,
         borderTopStartRadius: 15,

@@ -7,6 +7,7 @@ import { StylePsn } from '../../components/PesanComponents/psnStyle';
 import { CardMetodeBayar } from '../../components/PesanComponents/CardMetodeBayar';
 import { CardFile } from '../../components/PesanComponents/CardFile';
 import { CardSendMethod } from '../../components/PesanComponents/CardSendMethod';
+import { CardInfoBayar } from '../../components/PesanComponents/CardInfoBayar';
 
 // const FormAlamat = (
 //     <View style={[{
@@ -77,6 +78,7 @@ const PesanJasaScreen = (props) => {
                             onChange={(e) => console.log(e)}
                         />
                         <CardSendMethod />
+                        <CardInfoBayar />
                     </TouchableOpacity>
                 </ScrollView>
             </View>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, TextInput, Animated } from 'react-native';
+import LinearGradient from 'react-native-linear-gradient';
 import { Easing } from 'react-native-reanimated';
 //
 import { Constant } from '../../constants/index.constants';
@@ -56,51 +57,51 @@ export const CardSendMethod = (props) => {
                 <View style={{
                     marginBottom: 5,
                 }}>
-                {
-                    data.map((e, index) => {
-                        return (
-                            <View key={index} style={[{
-                                backgroundColor: Constant.warnaPrimaryButton,
-                                marginBottom: index == data.length - 1 ? 0 : 5,
-                                paddingVertical: 10,
-                                paddingHorizontal: 8,
-                                borderRadius: 10,
-                            }]}>
-                                <TouchableOpacity activeOpacity={0.9} onPress={() => AlamatOpen(index)}>
-                                    <View
-                                        style={{
-                                            flexDirection: 'row',
-                                            justifyContent: 'space-between',
-                                            alignItems: 'center',
-                                        }}
-                                    >
-                                        <Text style={[StylePsn.textField, {
-                                            width: '90%',
-                                            fontSize: 16,
-                                        }]}>{e.text}</Text>
-                                        <View style={[{
-                                            backgroundColor: Constant.warnaPutih,
-                                            height: 25,
-                                            width: 25,
-                                            borderRadius: 100,
-                                            justifyContent: 'center',
-                                            alignItems: 'center',
-                                        }, SsShadow]}>
-                                            <View
-                                                style={{
-                                                    backgroundColor: selectedIndex == index ? Constant.warnaSemiRed : Constant.warnaTransparant,
-                                                    height: 15,
-                                                    width: 15,
-                                                    borderRadius: 15,
-                                                }}
-                                            />
+                    {
+                        data.map((e, index) => {
+                            return (
+                                <View key={index} style={[{
+                                    backgroundColor: Constant.warnaPrimaryButton,
+                                    marginBottom: index == data.length - 1 ? 0 : 5,
+                                    paddingVertical: 10,
+                                    paddingHorizontal: 8,
+                                    borderRadius: 10,
+                                }]}>
+                                    <TouchableOpacity activeOpacity={0.9} onPress={() => AlamatOpen(index)}>
+                                        <View
+                                            style={{
+                                                flexDirection: 'row',
+                                                justifyContent: 'space-between',
+                                                alignItems: 'center',
+                                            }}
+                                        >
+                                            <Text style={[StylePsn.textField, {
+                                                width: '90%',
+                                                fontSize: 16,
+                                            }]}>{e.text}</Text>
+                                            <View style={[{
+                                                backgroundColor: Constant.warnaPutih,
+                                                height: 25,
+                                                width: 25,
+                                                borderRadius: 100,
+                                                justifyContent: 'center',
+                                                alignItems: 'center',
+                                            }, SsShadow]}>
+                                                <View
+                                                    style={{
+                                                        backgroundColor: selectedIndex == index ? Constant.warnaSemiRed : Constant.warnaTransparant,
+                                                        height: 15,
+                                                        width: 15,
+                                                        borderRadius: 15,
+                                                    }}
+                                                />
+                                            </View>
                                         </View>
-                                    </View>
-                                </TouchableOpacity>
-                            </View>
-                        )
-                    })
-                }
+                                    </TouchableOpacity>
+                                </View>
+                            )
+                        })
+                    }
                 </View>
                 <Animated.View style={{
                     opacity: animatedOpacity,
@@ -114,12 +115,14 @@ export const CardSendMethod = (props) => {
                 }}>
                     {
                         selectedIndex == 1 ? (
-                            <View style={{
+                            <LinearGradient style={{
                                 paddingVertical: 10,
                                 paddingHorizontal: 8,
-                                backgroundColor: Constant.warnaSemiRed,
                                 borderRadius: 10,
-                            }}>
+                            }} 
+                            start={{ x: 0, y: 0 }}
+                            end={{ x: 3.5, y: 0 }}
+                            colors={[Constant.warnaSemiRed, Constant.warnaPutih]}>
                                 <TextInput
                                     placeholder="Isi alamat Anda!"
                                     placeholderTextColor={Constant.warnaPutih}
@@ -130,7 +133,7 @@ export const CardSendMethod = (props) => {
                                     }}
                                     multiline={true}
                                 />
-                            </View>
+                            </LinearGradient>
                         ) : null
                     }
                 </Animated.View>
