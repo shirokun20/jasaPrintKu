@@ -1,11 +1,12 @@
 import React from 'react';
-import { View, Text, TouchableOpacity,  } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import LinearGradient from 'react-native-linear-gradient';
 //
 import { StylePsn } from './psnStyle';
 import { Constant } from '../../constants/index.constants';
 import { SsShadow } from '../../components/SplashScreenComponents/ssShadow';
+import { BtnPesanJasa } from './BtnPesanJasa';
 const ContentDetailFile = ({
     field,
     value,
@@ -25,36 +26,10 @@ const ContentDetailFile = ({
     )
 }
 
-const ButtonTambahKanFile = () => {
-    return (
-        <TouchableOpacity activeOpacity={0.8} style={[{
-            width: '100%',
-            marginBottom: 5,
-        }]}>
-            <LinearGradient
-                start={{ x: 0, y: 0 }}
-                end={{ x: 3.5, y: 0 }}
-                colors={[Constant.warnaSemiRed, Constant.warnaPutih]}
-                style={[{
-                    width: '100%',
-                    padding: 10,
-                    alignItems: 'center',
-                    borderRadius: 10,
-                }]}
-            >
-                <Text style={{
-                    color: Constant.warnaPutih,
-                    fontSize: 20,
-                }}>Tambahkan File</Text>
-            </LinearGradient>
-        </TouchableOpacity>
-    )
-}
-
 
 const CardUploadFile = (props) => {
     return (
-        <View style={[StylePsn.containerInfo]} activeOpacity={0.9}>
+        <View style={[StylePsn.containerInfo]}>
             <View style={{
                 flexDirection: 'row',
                 alignItems: 'flex-start',
@@ -113,32 +88,55 @@ const CardUploadFile = (props) => {
     );
 };
 
-const CardFile = () => {
+const CardFile = ({
+    btnFileVisible,
+    onBtnFilePress,
+}) => {
     return (
-        <View style={[{
-            paddingRight: 4,
-            borderTopEndRadius: 15,
-            borderBottomEndRadius: 15,
-            borderTopStartRadius: 11,
-            borderBottomStartRadius: 11,
-        }, StylePsn.cardFile, SsShadow]}>
+        <View style={[Style.container, StylePsn.cardFile, SsShadow]}>
             <View style={[StylePsn.cardBasic]}>
                 <Text style={StylePsn.textHeaderInfo}>File yang akan di print (Max 3):</Text>
-                <CardUploadFile 
+                <CardUploadFile
                     filename="tolong-print.pdf"
                     filesize="1 MB"
                     pagesPrint="1 s/d 10"
                     printType="Warna"
                     totalPages="20"
                     fileketerangan="Lorem Ipsum adalah contoh teks atau dummy dalam industri percetakan dan penataan huruf atau typesetting. Lorem Ipsum telah menjadi standar contoh teks sejak tahun 1500an, saat seorang tukang cetak yang tidak dikenal mengambil sebuah kumpulan teks dan mengacaknya untuk menjadi sebuah buku contoh huruf. Ia tidak hanya bertahan selama 5 abad, tapi juga telah beralih ke penataan huruf elektronik, tanpa ada perubahan apapun. Ia mulai dipopulerkan pada tahun 1960 dengan diluncurkannya lembaran-lembaran Letraset yang menggunakan kalimat-kalimat dari Lorem Ipsum, dan seiring munculnya perangkat lunak Desktop Publishing seperti Aldus PageMaker juga memiliki versi Lorem Ipsum."
-                    onDeleted={(e) => console.log(e) }
+                    onDeleted={(e) => console.log(e)}
                 />
-                <ButtonTambahKanFile />
+                {
+                    btnFileVisible ? (
+                        <BtnPesanJasa onPress={() => onBtnFilePress()}
+                            text="Tambahkan File"
+                        />
+                    ) : null
+                }
+                <Text style={[StylePsn.textHeaderInfo, {
+                    fontSize: 14,
+                    color: Constant.warnaSecondaryButton,
+                }]}>* Pastikan isi dengan benar</Text>
             </View>
         </View>
     );
 };
 
+CardFile.defaultProps = {
+    onBtnFilePress: () => { },
+    btnFileVisible: true,
+}
+
+const Style = StyleSheet.create({
+    container: {
+        paddingRight: 4,
+        borderTopEndRadius: 15,
+        borderBottomEndRadius: 15,
+        borderTopStartRadius: 11,
+        borderBottomStartRadius: 11,
+    }
+})
+
 export {
-    CardFile
+    CardFile,
+    ContentDetailFile
 }

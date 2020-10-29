@@ -7,7 +7,7 @@ import { SsShadow } from '~/components/SplashScreenComponents/ssShadow';
 import { LStyle } from './lcStyle';
 import { LcButtonComponent } from './lcData';
 
-const LcButton = ({ text, bgColor, callback}) => {
+const LcButton = ({ text, bgColor, callback, width = '80%'}) => {
     //
     const animasi = useRef(new Animated.Value(0.3)).current;
     const [defaultPress] = useState(0.8);
@@ -36,7 +36,7 @@ const LcButton = ({ text, bgColor, callback}) => {
             }, SsShadow]} activeOpacity={0.8} bgColor={bgColor} onPress={(e) => {
                 clickAnimate();
                 callback('hasil');
-            }}>
+            }} width={width}>
                 <Text style={[LStyle.textContent, LStyle.textButton]}>{text}</Text>
             </LcButtonComponent>
         </Animated.View>

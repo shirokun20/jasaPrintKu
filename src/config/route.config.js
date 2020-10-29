@@ -18,6 +18,7 @@ import {
     ProdukPages,
     DetailProdukPages,
     PesanJasaPages,
+    UploadFormPages,
 } from '~/pages';
 import { Constant } from '../constants/index.constants';
 //
@@ -102,6 +103,18 @@ const ScreenBerandaDll = (
                 headerBackTitleVisible: false,
                 headerTitleAlign: 'center',
                 headerTitle: 'Pesan Jasa Print',
+                headerTintColor: Constant.warnaPutih,
+                headerTransparent: true,
+            }}
+        />
+        <Stack.Screen 
+            name="UploadFormScreen"
+            component={UploadFormPages}
+            options={{
+                headerBackTitle: false,
+                headerBackTitleVisible: false,
+                headerTitleAlign: 'center',
+                headerTitle: 'Upload File',
                 headerTintColor: Constant.warnaPutih,
                 headerTransparent: true,
             }}

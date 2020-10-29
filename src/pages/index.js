@@ -11,6 +11,7 @@ import HalamanUtamaPages from './HalamanUtamaPages/HalamanUtama.index';
 import ProdukPages from './ProdukPages/Produk.index';
 import DetailProdukPages from './DetailProdukPages/DetailProduk.index';
 import PesanJasaPages from './PesanJasaPages/PesanJasa.index';
+import UploadFormPages from './UploadFormPages/UploadForm.index';
 //
 export {
     SplashScreenPages,
@@ -24,4 +25,5 @@ export {
     ProdukPages,
     DetailProdukPages,
     PesanJasaPages,
+    UploadFormPages,
 }

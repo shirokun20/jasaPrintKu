@@ -41,7 +41,6 @@ export const CardInfoBayar = ({
             borderBottomEndRadius: 11,
             borderTopStartRadius: 15,
             borderBottomStartRadius: 15,
-            marginBottom: 5
         }]}>
             <View style={[StylePsn.cardBasic]}>
                 <Text style={StylePsn.textHeaderInfo}>Info Pembayaran:</Text>
