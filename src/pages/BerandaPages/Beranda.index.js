@@ -30,13 +30,13 @@ const BerandaScreen = (props) => {
         icon: 'envelope-o',
         routeKe: null,
         pager: 10,
-    }, 
-    // {
-    //     name: 'Produk',
-    //     icon: 'print',
-    //     routeKe: 'ProdukScreen',
-    // }
-];
+    },
+        // {
+        //     name: 'Produk',
+        //     icon: 'print',
+        //     routeKe: 'ProdukScreen',
+        // }
+    ];
     //
     const PanelTengahContent = dataContent.map((e, index) => (
         <TouchableOpacity key={index} style={{
@@ -114,117 +114,133 @@ const BerandaScreen = (props) => {
         </View>
     );
     // Sample Content = 
-    const sampleContent = (
-        <TouchableHighlight style={[{
-            marginTop: 1,
-            marginBottom: 10,
-            width: '99%',
-            borderRadius: 5,
-            backgroundColor: Constant.warnaPutih,
-        }, SsShadow]} underlayColor={Constant.warnaSemiPutih} onPress={() => { }}>
-            <View style={{
-                flexDirection: 'row',
-                justifyContent: 'space-between',
-                paddingHorizontal: 5,
-                paddingVertical: 5,
-            }}>
-                <View>
+    const SampleContent = ({
+        index = 0
+    }) => {
+        return (
+            <TouchableOpacity style={[{
+                backgroundColor: (index + 1) % 2 == 1 ? Constant.warnaSemiRed : Constant.warnaAlertSuccess,
+                width: '100%',
+                marginBottom: 10,
+                marginTop: 1,
+                borderTopRightRadius: 10,
+                borderBottomRightRadius: 10,
+                borderTopLeftRadius: 6,
+                borderBottomLeftRadius: 6,
+                paddingRight: 5,
+            }, SsShadow]} activeOpacity={0.95} onPress={() => { }}>
+                <View style={[{
+                    backgroundColor: Constant.warnaPutih,
+                    borderRadius: 5.5,
+                }]} >
                     <View style={{
-                        marginBottom: 20,
-                    }}>
-                        <Text style={{
-                            fontSize: 20,
-                            color: Constant.warnaAlertError,
-                            fontWeight: Platform.select({
-                                android: 'bold',
-                                ios: '600',
-                            })
-                        }}>#INV0001</Text>
-                    </View>
-                    <View style={{
-                        marginTop: 5,
+                        flexDirection: 'row',
+                        justifyContent: 'space-between',
+                        paddingHorizontal: 5,
+                        paddingVertical: 5,
                     }}>
                         <View>
-                            <Text style={{
-                                fontSize: 15
-                            }}>Rp. 10.000</Text>
+                            <View style={{
+                                marginBottom: 20,
+                            }}>
+                                <Text style={{
+                                    fontSize: 20,
+                                    color: Constant.warnaAlertError,
+                                    fontWeight: Platform.select({
+                                        android: 'bold',
+                                        ios: '600',
+                                    })
+                                }}>#INV0001</Text>
+                            </View>
+                            <View style={{
+                                marginTop: 5,
+                            }}>
+                                <View>
+                                    <Text style={{
+                                        fontSize: 15
+                                    }}>Rp. 10.000</Text>
+                                </View>
+                                <View>
+                                    <Text style={{
+                                        fontSize: 15,
+                                        color: Constant.warnaAlertSuccess,
+                                        fontWeight: 'bold',
+                                    }}>On Process</Text>
+                                </View>
+                            </View>
                         </View>
-                        <View>
-                            <Text style={{
-                                fontSize: 15,
-                                color: Constant.warnaAlertSuccess,
-                                fontWeight: 'bold',
-                            }}>On Process</Text>
+                        <View style={{
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                        }}>
+                            <View style={[{
+                                backgroundColor: (index + 1) % 2 == 1 ? Constant.warnaSemiRed : Constant.warnaAlertSuccess,
+                                paddingVertical: 10,
+                                paddingHorizontal: 15,
+                                alignItems: 'center',
+                                borderRadius: 5,
+                                marginBottom: 2,
+                            }]}>
+                                <Text style={{
+                                    color: Constant.warnaPutih,
+                                    fontSize: 20,
+                                    fontWeight: Platform.select({
+                                        android: 'bold',
+                                        ios: '600',
+                                    })
+                                }}>27</Text>
+                                <Text style={{
+                                    color: Constant.warnaPutih,
+                                    fontWeight: Platform.select({
+                                        android: 'bold',
+                                        ios: '600',
+                                    })
+                                }}>Sep</Text>
+                            </View>
+                            <View style={{
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                            }}>
+                                <Text style={{
+                                    fontWeight: Platform.select({
+                                        android: 'bold',
+                                        ios: '600',
+                                    }),
+                                    fontSize: 18,
+                                }}>2020</Text>
+                            </View>
                         </View>
                     </View>
                 </View>
-                <View style={{
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                }}>
-                    <View style={[{
-                        backgroundColor: Constant.warnaSemiRed,
-                        paddingVertical: 10,
-                        paddingHorizontal: 15,
-                        alignItems: 'center',
-                        borderRadius: 5,
-                        marginBottom: 2,
-                    }, SsShadow]}>
-                        <Text style={{
-                            color: Constant.warnaPutih,
-                            fontSize: 20,
-                            fontWeight: Platform.select({
-                                android: 'bold',
-                                ios: '600',
-                            })
-                        }}>27</Text>
-                        <Text style={{
-                            color: Constant.warnaPutih,
-                            fontWeight: Platform.select({
-                                android: 'bold',
-                                ios: '600',
-                            })
-                        }}>Sep</Text>
-                    </View>
-                    <View style={{
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                    }}>
-                        <Text style={{
-                            fontWeight: Platform.select({
-                                android: 'bold',
-                                ios: '600',
-                            }),
-                            fontSize: 18,
-                        }}>2020</Text>
-                    </View>
-                </View>
-            </View>
-        </TouchableHighlight>
-    );
+            </TouchableOpacity>
+        )
+    };
+
+    const sampleData = new Array();
+
+    for (let index = 0; index < 8; index++) {
+        sampleData.push(<SampleContent 
+            key={index}
+            index={index}
+        />)
+    }
     //
     const ContentBawahView = (
         <View style={{
-            width: '95%',
+            width: '100%',
             height: '100%',
             alignSelf: 'center',
         }}>
             <ScrollView style={{
                 width: '100%',
                 height: '100%',
-            }} 
-            contentContainerStyle={{
-                alignItems: 'center',
-            }} showsVerticalScrollIndicator={false}>
-                {sampleContent}
-                {sampleContent}
-                {sampleContent}
-                {sampleContent}
-                {sampleContent}
-                {sampleContent}
-                {sampleContent}
-                {sampleContent}
-                <View 
+            }}
+                contentContainerStyle={{
+                    alignItems: 'center',
+                    paddingHorizontal: 10,
+                }} showsVerticalScrollIndicator={false}>
+                {sampleData}
+                <View
                     style={{
                         height: 100,
                     }}

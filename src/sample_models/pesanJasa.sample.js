@@ -22,5 +22,25 @@ export const PesanJasaSample = {
             text: 'Diantar dengan OJOL',
             send_method_id: 2,
         },
+    ],
+    jenisPrintData: [
+        {
+            text: 'Warna',
+            jenis_print_id: 1,
+        },
+        {
+            text: 'Non Warna',
+            jenis_print_id: 2,
+        },
+    ],
+    printHalamanData: [
+        {
+            text: 'Print Semua',
+            printHalamanType: 1,
+        },
+        {
+            text: 'Atur Sendiri',
+            printHalamanType: 2,
+        },
     ]
 }

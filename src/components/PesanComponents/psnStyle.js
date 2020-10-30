@@ -39,5 +39,29 @@ export const StylePsn = StyleSheet.create({
     textField: {
         width: 80,
         fontWeight: 'bold',
+    },
+    parentContainerCheckbox: {
+        backgroundColor: Constant.warnaPrimaryButton,
+        paddingVertical: 10,
+        paddingHorizontal: 8,
+        borderRadius: 10,
+    },
+    containerCheckbox: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+    },
+    checkboxBackground: {
+        backgroundColor: Constant.warnaPutih,
+        height: 25,
+        width: 25,
+        borderRadius: 100,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    checkboxCustom: {
+        height: 15,
+        width: 15,
+        borderRadius: 15,
     }
 })
