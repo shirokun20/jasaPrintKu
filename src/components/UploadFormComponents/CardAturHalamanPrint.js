@@ -15,7 +15,7 @@ const CarAturHalamanPrint = () => {
     // State
     const [selectedIndex, setSelectedIndex] = React.useState(0);
     const [valueTest, setValueTest] = React.useState('');
-    const [valueToData, setValueToData] = React.useState([]);
+    const [valueToData, setValueToData] = React.useState('');
     const [totalPages] = React.useState(10);
     //
     const data = PesanJasaSample.printHalamanData;
@@ -76,7 +76,9 @@ const CarAturHalamanPrint = () => {
             }
         }
         toData = JSON.stringify(obj);
-        console.log(toData.toString());
+        // console.log(toData.toString());
+        setValueToData(toData.toString());
+        setValueTest(value);
     }
 
     return (
@@ -151,7 +153,6 @@ const CarAturHalamanPrint = () => {
                                     }}
                                     value={valueTest}
                                     onChangeText={(value) => {
-                                        setValueTest(value);
                                         onSetChangeData(value);
                                     }}
                                 />

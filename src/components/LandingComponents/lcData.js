@@ -18,7 +18,7 @@ const LcButtonComponent = styled.TouchableOpacity`
     width: ${ props => props.width || '80%'};
     padding-vertical: 10px;
     padding-horizontal: 10px;
-    background-color: ${ props => props.bgColor || Constant.warnaPrimaryButton};
+    background-color: ${ props => props.bgColor || Constant.warnaSemiRed};
     border-radius: ${ props => props.borderRadius || '8px'};
 `;
 
