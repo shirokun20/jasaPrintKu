@@ -12,6 +12,7 @@ import ProdukPages from './ProdukPages/Produk.index';
 import DetailProdukPages from './DetailProdukPages/DetailProduk.index';
 import PesanJasaPages from './PesanJasaPages/PesanJasa.index';
 import UploadFormPages from './UploadFormPages/UploadForm.index';
+import PesanJasaWaitingPages from './PesanJasaWaitingPages/PesanJasaWaiting.index';
 //
 export {
     SplashScreenPages,
@@ -26,4 +27,5 @@ export {
     DetailProdukPages,
     PesanJasaPages,
     UploadFormPages,
+    PesanJasaWaitingPages,
 }

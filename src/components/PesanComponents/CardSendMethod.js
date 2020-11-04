@@ -4,6 +4,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import { Easing } from 'react-native-reanimated';
 //
 import { Constant } from '../../constants/index.constants';
+import { Waktu } from '../../Libs/waktu.lib';
 import { PesanJasaSample } from '../../sample_models/pesanJasa.sample';
 //
 import { SsShadow } from '../SplashScreenComponents/ssShadow'
@@ -13,10 +14,15 @@ export const CardSendMethod = (props) => {
 
     const animatedOpacity = React.useRef(new Animated.Value(0)).current;
     const transformYAnimated = React.useRef(new Animated.Value(0)).current;
+    const animatedOpacitySelected = React.useRef(new Animated.Value(0)).current;
     //
     const [selectedIndex, setSelectedIndex] = React.useState(0);
     const data = PesanJasaSample.sendMethod;
     // ojol Kliked
+
+    React.useEffect(() => {
+        AlamatOpen(0);
+    }, [])
 
     const AlamatOpen = (index) => {
         var toValue = 0;
@@ -25,6 +31,7 @@ export const CardSendMethod = (props) => {
             toValue = 1;
             toValueSlider = 0;
         }
+        animatedOpacitySelected.setValue(0);
         Animated.parallel([
             Animated.timing(animatedOpacity, {
                 toValue: toValue,
@@ -38,9 +45,17 @@ export const CardSendMethod = (props) => {
                 tension: 2,
                 friction: 8,
                 useNativeDriver: true,
-            })
+            }),
+            Animated.timing(animatedOpacitySelected, {
+                toValue: 1,
+                duration: 250,
+                useNativeDriver: true,
+                easing: Easing.linear,
+            }),
         ]).start();
-        setTimeout(() => setSelectedIndex(index), 150);
+        Waktu.tunggu(100).then(() => {
+            setSelectedIndex(index);
+        })
     }
 
     return (
@@ -63,7 +78,7 @@ export const CardSendMethod = (props) => {
                                 <View key={index} style={[StylePsn.parentContainerCheckbox, {
                                     marginBottom: index == data.length - 1 ? 0 : 5,
                                 }]}>
-                                    <TouchableOpacity activeOpacity={0.9} onPress={() => AlamatOpen(index)}>
+                                    <TouchableOpacity activeOpacity={1} onPress={() => AlamatOpen(index)}>
                                         <View
                                             style={StylePsn.containerCheckbox}
                                         >
@@ -72,10 +87,13 @@ export const CardSendMethod = (props) => {
                                                 fontSize: 16,
                                             }]}>{e.text}</Text>
                                             <View style={[StylePsn.checkboxBackground, SsShadow]}>
-                                                <View
+                                                <Animated.View
                                                     style={[{
+                                                        opacity: animatedOpacitySelected.interpolate({
+                                                            inputRange: [0, 1],
+                                                            outputRange: [0.8, 1]
+                                                        }),
                                                         backgroundColor: selectedIndex == index ? Constant.warnaSemiRed : Constant.warnaTransparant,
-                                                      
                                                     }, StylePsn.checkboxCustom]}
                                                 />
                                             </View>
@@ -102,10 +120,10 @@ export const CardSendMethod = (props) => {
                                 paddingVertical: 10,
                                 paddingHorizontal: 8,
                                 borderRadius: 10,
-                            }} 
-                            start={{ x: 0, y: 0 }}
-                            end={{ x: 3.5, y: 0 }}
-                            colors={[Constant.warnaSemiRed, Constant.warnaPutih]}>
+                            }}
+                                start={{ x: 0, y: 0 }}
+                                end={{ x: 3.5, y: 0 }}
+                                colors={[Constant.warnaSemiRed, Constant.warnaPutih]}>
                                 <TextInput
                                     placeholder="Isi alamat Anda!"
                                     placeholderTextColor={Constant.warnaPutih}

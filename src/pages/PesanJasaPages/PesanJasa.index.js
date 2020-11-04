@@ -43,7 +43,7 @@ const PesanJasaScreen = (props) => {
                         <LcButton
                             text="Pesan Sekarang!"
                             callback={(e) => {
-
+                                navigation.navigate('PesanJasaWaitingScreen');
                             }}
                             width="100%"
                         />
