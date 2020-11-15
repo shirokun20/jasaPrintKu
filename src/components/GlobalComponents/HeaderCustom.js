@@ -2,6 +2,7 @@ import React from 'react';
 import LinearGradient from 'react-native-linear-gradient';
 //
 import { Constant } from '../../constants/index.constants';
+import { SsShadow } from '../SplashScreenComponents/ssShadow';
 
 export const HeaderBg = (
     <LinearGradient

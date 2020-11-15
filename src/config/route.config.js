@@ -20,6 +20,7 @@ import {
     PesanJasaPages,
     UploadFormPages,
     PesanJasaWaitingPages,
+    DetailPesanJasaPages,
 } from '~/pages';
 import { Constant } from '../constants/index.constants';
 //
@@ -133,6 +134,18 @@ const ScreenBerandaDll = (
                 headerTransparent: true,
                 gestureEnabled: false,
                 cardStyleInterpolator: CardStyleInterpolators.forFadeFromBottomAndroid,
+            }}
+        />
+        <Stack.Screen
+            name="DetailPesanJasaPages"
+            component={DetailPesanJasaPages}
+            options={{
+                headerBackTitle: false,
+                headerBackTitleVisible: false,
+                headerTitleAlign: 'center',
+                headerTitle: `Detail Pesanan No. 20998`,
+                headerTintColor: Constant.warnaPutih,
+                headerTransparent: true,
             }}
         />
     </>

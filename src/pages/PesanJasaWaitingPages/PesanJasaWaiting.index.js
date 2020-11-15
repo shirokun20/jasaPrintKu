@@ -10,8 +10,14 @@ const PesanJasaWaitingScreen = (props) => {
     React.useEffect(() => {
         Waktu.tunggu(2000).then(() => {
             props.navigation.reset({
+                index: 1,
                 routes: [{
-                    name: 'HalamanUtamaScreen'
+                    name: 'HalamanUtamaScreen',
+                }, {
+                    name: 'DetailPesanJasaPages',
+                    params: {
+                        user: 'Test',
+                    }
                 }]
             })
         });

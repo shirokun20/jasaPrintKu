@@ -11,6 +11,7 @@ const ContentDetailFile = ({
     field,
     value,
     line = 1,
+    keteranganFull = false,
 }) => {
     return (
         <View style={{
@@ -18,10 +19,19 @@ const ContentDetailFile = ({
             width: '100%',
         }}>
             <Text style={StylePsn.textField}>{field}</Text>
-            <Text style={{
-                flex: 1,
-                fontWeight: 'bold'
-            }} numberOfLines={line}>: {value}</Text>
+            {
+                !keteranganFull ? (
+                    <Text style={{
+                        flex: 1,
+                        fontWeight: 'bold'
+                    }} numberOfLines={line}>: {value}</Text>
+                ) : (
+                        <Text style={{
+                            flex: 1,
+                            fontWeight: 'bold'
+                        }}>: {value}</Text>
+                    )
+            }
         </View>
     )
 }
@@ -71,18 +81,23 @@ const CardUploadFile = (props) => {
                     <ContentDetailFile
                         field="Keterangan"
                         value={props.fileketerangan}
-                        line={1}
+                        line={0}
+                        keteranganFull={props.keteranganFull}
                     />
                 </View>
-                <TouchableOpacity activeOpacity={0.5} onPress={() => props.onDeleted(props.filename)}>
-                    <Icon
-                        name="trash"
-                        size={25}
-                        style={{
-                            color: Constant.warnaSemiRed,
-                        }}
-                    />
-                </TouchableOpacity>
+                {
+                    !props.deleteHide ? (
+                        <TouchableOpacity activeOpacity={0.5} onPress={() => props.onDeleted(props.filename)}>
+                            <Icon
+                                name="trash"
+                                size={25}
+                                style={{
+                                    color: Constant.warnaSemiRed,
+                                }}
+                            />
+                        </TouchableOpacity>
+                    ) : null
+                }
             </View>
         </View>
     );
@@ -91,19 +106,24 @@ const CardUploadFile = (props) => {
 const CardFile = ({
     btnFileVisible,
     onBtnFilePress,
+    deleteHide = false,
+    peringatanHide = false,
+    keteranganFull = false,
 }) => {
     return (
         <View style={[Style.container, StylePsn.cardFile, SsShadow]}>
             <View style={[StylePsn.cardBasic]}>
-                <Text style={StylePsn.textHeaderInfo}>File yang akan di print (Max 3):</Text>
+                <Text style={StylePsn.textHeaderInfo}>File yang akan di print {btnFileVisible ? '(Max 3) ' : null}:</Text>
                 <CardUploadFile
                     filename="tolong-print.pdf"
                     filesize="1 MB"
                     pagesPrint="1 s/d 10"
                     printType="Warna"
                     totalPages="20"
-                    fileketerangan="Lorem Ipsum adalah contoh teks atau dummy dalam industri percetakan dan penataan huruf atau typesetting. Lorem Ipsum telah menjadi standar contoh teks sejak tahun 1500an, saat seorang tukang cetak yang tidak dikenal mengambil sebuah kumpulan teks dan mengacaknya untuk menjadi sebuah buku contoh huruf. Ia tidak hanya bertahan selama 5 abad, tapi juga telah beralih ke penataan huruf elektronik, tanpa ada perubahan apapun. Ia mulai dipopulerkan pada tahun 1960 dengan diluncurkannya lembaran-lembaran Letraset yang menggunakan kalimat-kalimat dari Lorem Ipsum, dan seiring munculnya perangkat lunak Desktop Publishing seperti Aldus PageMaker juga memiliki versi Lorem Ipsum."
+                    keteranganFull={keteranganFull}
+                    fileketerangan="Lorem Ipsum adalah contoh teks atau dummy dalam industri percetakan dan penataan huruf atau typesetting."
                     onDeleted={(e) => console.log(e)}
+                    deleteHide={deleteHide}
                 />
                 {
                     btnFileVisible ? (
@@ -112,10 +132,14 @@ const CardFile = ({
                         />
                     ) : null
                 }
-                <Text style={[StylePsn.textHeaderInfo, {
-                    fontSize: 14,
-                    color: Constant.warnaSecondaryButton,
-                }]}>* Pastikan isi dengan benar</Text>
+                {
+                    !peringatanHide ? (
+                        <Text style={[StylePsn.textHeaderInfo, {
+                            fontSize: 14,
+                            color: Constant.warnaSecondaryButton,
+                        }]}>* Pastikan isi dengan benar</Text>
+                    ) : null
+                }
             </View>
         </View>
     );

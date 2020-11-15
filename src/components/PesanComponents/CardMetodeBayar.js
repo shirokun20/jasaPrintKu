@@ -133,7 +133,7 @@ CardMetodeBayar.defaultProps = {
     onChange: () => {},
 }
 
-const StyleCmb = StyleSheet.create({
+export const StyleCmb = StyleSheet.create({
     container: {
         paddingLeft: 4,
         borderTopEndRadius: 11,
