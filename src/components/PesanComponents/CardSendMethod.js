@@ -59,13 +59,7 @@ export const CardSendMethod = (props) => {
     }
 
     return (
-        <View style={[StylePsn.cardFile, SsShadow, {
-            paddingRight: 4,
-            borderTopEndRadius: 15,
-            borderTopStartRadius: 11,
-            borderBottomEndRadius: 15,
-            borderBottomStartRadius: 11,
-        }]}>
+        <View style={[StylePsn.cardFile, SsShadow, StylePsn.backDropRight]}>
             <View style={[StylePsn.cardBasic, {
             }]}>
                 <Text style={StylePsn.textHeaderInfo}>Metode Pengiriman:</Text>

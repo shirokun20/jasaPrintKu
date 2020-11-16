@@ -63,5 +63,12 @@ export const StylePsn = StyleSheet.create({
         height: 15,
         width: 15,
         borderRadius: 15,
+    },
+    backDropRight: {
+        paddingRight: 4,
+        borderTopEndRadius: 15,
+        borderTopStartRadius: 11,
+        borderBottomEndRadius: 15,
+        borderBottomStartRadius: 11,
     }
 })

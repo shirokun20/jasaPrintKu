@@ -22,7 +22,7 @@ const CardMetodeBayarDP = () => {
                             return (
                                 <View style={{
                                     flexDirection: 'row',
-                                }}>
+                                }} key={index}>
                                     <View style={{
                                         width: 60,
                                         marginRight: 10,
@@ -53,7 +53,6 @@ const CardMetodeBayarDP = () => {
                             )
                         })
                     }
-                    
                 </View>
             </View>
         </View>
