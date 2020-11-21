@@ -1,4 +1,5 @@
 import React from 'react';
+import { Dimensions } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 //
 import { Constant } from '../../constants/index.constants';
@@ -10,7 +11,7 @@ export const HeaderBg = (
         end={{ x: 3.5, y: 0 }}
         colors={[Constant.warnaSemiRed, Constant.warnaPutih]}
         style={[{
-            height: 85,
+            height: Dimensions.get('screen').height*0.088,
         }]}
     />
 );

@@ -22,6 +22,7 @@ const DetailPesanJasaScreen = (props) => {
                         marginHorizontal: 10,
                         marginVertical: 10,
                     }}>
+                        <CardStatusOrderDP />
                         <CardFile
                             onBtnFilePress={() => {
                                 navigation.navigate('UploadFormScreen');
@@ -34,7 +35,6 @@ const DetailPesanJasaScreen = (props) => {
                         <CardMetodeBayarDP />
                         <CardSendMethodDP />
                         <CardInfoBayar />
-                        <CardStatusOrderDP />
                     </View>
                 </ScrollView>
             </View>

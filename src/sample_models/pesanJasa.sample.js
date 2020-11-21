@@ -42,5 +42,49 @@ export const PesanJasaSample = {
             text: 'Atur Sendiri',
             printHalamanType: 2,
         },
+    ],
+    statusPesananData: [
+        {
+            text: 'Belum diproses',
+            textColor: '#000',
+            bgColor: '#eeeeee',
+            id: 1,
+        },
+        {
+            text: 'Sedang diproses',
+            textColor: '#fff',
+            bgColor: '#9ccc65',
+            id: 2,
+        },
+        {
+            text: 'Selesai diprint',
+            textColor: '#fff',
+            bgColor: '#9ccc65',
+            id: 3,
+        },
+        {
+            text: 'Sedang dipacking',
+            textColor: '#fff',
+            bgColor: '#42a5f5',
+            id: 4,
+        },
+        {
+            text: 'Sedang dalam perjalanan',
+            textColor: '#fff',
+            bgColor: '#42a5f5',
+            id: 5,
+        },
+        {
+            text: 'Selesai',
+            textColor: '#fff',
+            bgColor: '#8d6e63',
+            id: 6,
+        },
+        {
+            text: 'Dibatalkan!',
+            textColor: '#fff',
+            bgColor: '#d32f2f',
+            id: 7,
+        },
     ]
 }
