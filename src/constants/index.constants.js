@@ -2,6 +2,7 @@ export const Constant = {
     warnaUtama: '#fafafa',
     warnaShadow: '#212121',
     warnaSemiRed: '#d32f2f',
+    warnaSemiRed2: '#c62828',
     warnaPrimaryButton: '#eeeeee',
     warnaSecondaryButton: '#ff7043',
     warnaHitam: '#000000',

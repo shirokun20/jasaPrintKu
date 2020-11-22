@@ -21,6 +21,7 @@ import {
     UploadFormPages,
     PesanJasaWaitingPages,
     DetailPesanJasaPages,
+    RiwayatOrderPages,
 } from '~/pages';
 import { Constant } from '../constants/index.constants';
 //
@@ -137,7 +138,7 @@ const ScreenBerandaDll = (
             }}
         />
         <Stack.Screen
-            name="DetailPesanJasaPages"
+            name="DetailPesanJasaScreen"
             component={DetailPesanJasaPages}
             options={{
                 headerBackTitle: false,
@@ -149,6 +150,25 @@ const ScreenBerandaDll = (
                 },
                 headerTintColor: Constant.warnaPutih,
                 headerTransparent: true,
+            }}
+        />
+        <Stack.Screen
+            name="RiwayatOrderScreen"
+            component={RiwayatOrderPages}
+            options={{
+                headerBackTitle: false,
+                headerBackTitleVisible: false,
+                headerTitleAlign: 'left',
+                headerTitle: 'Riwayat Pesanan',
+                headerTitleStyle: {
+                    fontWeight: 'bold',
+                },
+                headerTintColor: Constant.warnaPutih,
+                headerStyle: {
+                    backgroundColor: Constant.warnaSemiRed,
+                    elevation: 0,
+                    shadowOpacity: 0,
+                }
             }}
         />
     </>

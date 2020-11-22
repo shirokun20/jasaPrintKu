@@ -23,7 +23,7 @@ const BerandaScreen = (props) => {
     }, {
         name: 'Riwayat Order',
         icon: 'history',
-        routeKe: null,
+        routeKe: 'RiwayatOrderScreen',
         pager: 0,
     }, {
         name: 'Notifikasi',
@@ -71,8 +71,8 @@ const BerandaScreen = (props) => {
                             <Text style={{
                                 color: Constant.warnaPutih,
                                 fontWeight: 'bold',
-                                fontSize: 12,
-                            }}>{e.pager}</Text>
+                                fontSize: 10,
+                            }}>{e.pager > 10 ? '10+' : e.pager}</Text>
                         </View>
                     ) : null
                 }

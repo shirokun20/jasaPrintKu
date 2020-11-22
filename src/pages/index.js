@@ -14,6 +14,7 @@ import PesanJasaPages from './PesanJasaPages/PesanJasa.index';
 import UploadFormPages from './UploadFormPages/UploadForm.index';
 import PesanJasaWaitingPages from './PesanJasaWaitingPages/PesanJasaWaiting.index';
 import DetailPesanJasaPages from './DetailPesanJasaPages/DetailPesanJasa.index';
+import RiwayatOrderPages from './RiwayatOrderPages/RiwayatOrder.index';
 //
 export {
     SplashScreenPages,
@@ -30,4 +31,5 @@ export {
     UploadFormPages,
     PesanJasaWaitingPages,
     DetailPesanJasaPages,
+    RiwayatOrderPages,
 }

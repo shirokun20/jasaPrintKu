@@ -14,7 +14,7 @@ const PesanJasaWaitingScreen = (props) => {
                 routes: [{
                     name: 'HalamanUtamaScreen',
                 }, {
-                    name: 'DetailPesanJasaPages',
+                    name: 'DetailPesanJasaScreen',
                     params: {
                         user: 'Test',
                     }
