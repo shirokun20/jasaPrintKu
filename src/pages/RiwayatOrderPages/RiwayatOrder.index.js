@@ -107,6 +107,13 @@ export class RiwayatOrderScreen extends Component {
                                 });
                             }}
                         />
+                        <Card 
+                            onPress={() => {
+                                navigation.navigate('DetailPesanJasaScreen', {
+                                    user: 'test',
+                                });
+                            }}
+                        />
                         <View 
                             style={{
                                 height: 30,
