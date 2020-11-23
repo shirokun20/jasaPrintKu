@@ -22,6 +22,7 @@ const CardMetodeBayarDP = () => {
                             return (
                                 <View style={{
                                     flexDirection: 'row',
+                                    alignItems: 'center',
                                 }} key={index}>
                                     <View style={{
                                         width: 60,

@@ -1,14 +1,59 @@
 import React from 'react'
-import { View, Text, FlatList, TouchableOpacity, StyleSheet } from 'react-native'
+import { View, Text, FlatList, TouchableOpacity, StyleSheet, Animated } from 'react-native'
 import { Constant } from '../../constants/index.constants';
 import { PesanJasaSample } from '../../sample_models/pesanJasa.sample'
 import { SsShadow } from '../SplashScreenComponents/ssShadow';
 
+
+const Card = ({ item, index, setSelectedId, selectedId, dataLenght }) => {
+
+    const animasi = React.useRef(new Animated.Value(0.3)).current;
+    
+    const [defaultPress] = React.useState(0.8);
+
+    React.useEffect(() => {
+        clickAnimate()
+    }, [])
+
+    const clickAnimate = () => {
+        animasi.setValue(defaultPress);
+        Animated.spring(animasi, {
+            toValue: 1,
+            friction: 3,
+            useNativeDriver: true,
+        }).start();
+    };
+
+    return (
+        <Animated.View style={[{
+            justifyContent: 'center',
+        }, {
+            transform: [{ scale: selectedId == index ? animasi : 1 }],
+        }]}>
+            <TouchableOpacity style={[{
+                borderWidth: selectedId === index ? 1.5 : 0,
+                borderColor: Constant.warnaPutih,
+                marginLeft: index == 0 ? 15 : 0,
+                marginRight: (index + 1) == dataLenght ? 15 : 5,
+                backgroundColor: selectedId === index ? Constant.warnaSemiRed2 : Constant.warnaPutih,
+            }, Style.card, SsShadow]} onPress={() => {
+                setSelectedId(index);
+                clickAnimate();
+            }} activeOpacity={0.9}>
+                <Text style={{
+                    color: selectedId === index ? Constant.warnaPutih : Constant.warnaSemiRed,
+                    fontWeight: selectedId === index ? 'bold' : 'normal',
+                }}>{item.text}</Text>
+            </TouchableOpacity>
+        </Animated.View>
+    )
+}
+
 const StatusRiwayatOrder = () => {
 
     const [selectedId, setSelectedId] = React.useState(0);
-
-    const data = new Array();
+    
+    const data = new Array();   
 
     data.push({
         text: 'Semua',
@@ -22,20 +67,15 @@ const StatusRiwayatOrder = () => {
         });
     });
 
-    const renderItem = ({ item, index }) => {
+    const renderItem = ({item, index}) => {
         return (
-            <TouchableOpacity style={[{
-                borderWidth: selectedId === index ? 1.5 : 0,
-                borderColor: Constant.warnaPutih,
-                backgroundColor: selectedId === index ? Constant.warnaSemiRed2 : Constant.warnaPutih,
-                marginLeft: index == 0 ? 15 : 0,
-                marginRight: (index + 1) == data.length ? 15 : 5,
-            }, Style.card, SsShadow]} onPress={() => setSelectedId(index)} activeOpacity={0.9}>
-                <Text style={{
-                    color: selectedId === index ? Constant.warnaPutih : Constant.warnaSemiRed,
-                    fontWeight: selectedId === index ? 'bold' : 'normal',
-                }}>{item.text}</Text>
-            </TouchableOpacity>
+            <Card 
+                item={item}
+                index={index}
+                selectedId={selectedId}
+                setSelectedId={(value) => setSelectedId(value)}
+                dataLenght={data.length}
+            />
         )
     }
 
@@ -47,7 +87,7 @@ const StatusRiwayatOrder = () => {
                 showsHorizontalScrollIndicator={false}
                 contentContainerStyle={{ alignSelf: 'flex-start' }}
                 data={data}
-                keyExtractor={(item) => item.id.toString()  }
+                keyExtractor={(item) => item.id.toString()}
                 renderItem={renderItem}
                 extraData={selectedId}
             />

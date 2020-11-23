@@ -18,10 +18,10 @@ export const PesanJasaSample = {
             text: 'Diambil sendiri',
             send_method_id: 1,
         },
-        {
-            text: 'Diantar dengan OJOL',
-            send_method_id: 2,
-        },
+        // {
+        //     text: 'Diantar dengan OJOL',
+        //     send_method_id: 2,
+        // },
     ],
     jenisPrintData: [
         {
@@ -62,18 +62,18 @@ export const PesanJasaSample = {
             bgColor: '#9ccc65',
             id: 3,
         },
-        {
-            text: 'Sedang dipacking',
-            textColor: '#fff',
-            bgColor: '#42a5f5',
-            id: 4,
-        },
-        {
-            text: 'Sedang dalam perjalanan',
-            textColor: '#fff',
-            bgColor: '#42a5f5',
-            id: 5,
-        },
+        // {
+        //     text: 'Sedang dipacking',
+        //     textColor: '#fff',
+        //     bgColor: '#42a5f5',
+        //     id: 4,
+        // },
+        // {
+        //     text: 'Sedang dalam perjalanan',
+        //     textColor: '#fff',
+        //     bgColor: '#42a5f5',
+        //     id: 5,
+        // },
         {
             text: 'Selesai',
             textColor: '#fff',

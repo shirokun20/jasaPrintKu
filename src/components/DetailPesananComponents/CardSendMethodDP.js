@@ -7,7 +7,7 @@ import { StylePsn } from '../PesanComponents/psnStyle'
 import { SsShadow } from '../SplashScreenComponents/ssShadow'
 
 const CardSendMethodDP = () => {
-    const e = PesanJasaSample.sendMethod[1];
+    const e = PesanJasaSample.sendMethod[0];
     return (
         <>
             <View style={[StylePsn.backDropRight, StylePsn.cardFile, SsShadow]}>
@@ -25,7 +25,7 @@ const CardSendMethodDP = () => {
                     </View>
                 </View>
             </View>
-            <View style={[StylePsn.backDropRight, StylePsn.cardFile, SsShadow]}>
+            {/* <View style={[StylePsn.backDropRight, StylePsn.cardFile, SsShadow]}>
                 <View style={[StylePsn.cardBasic]}>
                     <Text style={StylePsn.textHeaderInfo}>Alamat:</Text>
                     <View style={StylePsn.parentContainerCheckbox}>
@@ -39,7 +39,7 @@ const CardSendMethodDP = () => {
                         </View>
                     </View>
                 </View>
-            </View>
+            </View> */}
         </>
     )
 }
