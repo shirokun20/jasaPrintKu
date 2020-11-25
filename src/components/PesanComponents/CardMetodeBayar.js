@@ -5,42 +5,29 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 //
 import { SsShadow } from '../../components/SplashScreenComponents/ssShadow';
 import { PesanJasaSample } from '../../sample_models/pesanJasa.sample';
-import { Constant } from '../../constants/index.constants';
 import { StylePsn } from './psnStyle';
 //
 export const CardMetodeBayar = (props) => {
     //
     const animatedOpacity = React.useRef(new Animated.Value(0)).current;
-    const transformYAnimated = React.useRef(new Animated.Value(0)).current;
     //
     const [isKlik, setIsKlik] = React.useState(false);
     const [pmText, setPmText] = React.useState('');
     //
     const metodePembayaranKlik = () => {
         var toValue = 0;
-        var toValueSlider = 100;
         if (!isKlik) {
             toValue = 1;
-            toValueSlider = 0;
         }
-        Animated.parallel([
-            Animated.timing(animatedOpacity, {
-                toValue: toValue,
-                duration: 500,
-                useNativeDriver: true,
-                easing: Easing.linear
-            }),
-            Animated.spring(transformYAnimated, {
-                toValue: toValueSlider,
-                velocity: 3,
-                tension: 2,
-                friction: 8,
-                useNativeDriver: true,
-            })
-        ]).start();
+        Animated.timing(animatedOpacity, {
+            toValue: toValue,
+            duration: 500,
+            useNativeDriver: true,
+            easing: Easing.linear,
+        }).start();
         setTimeout(() => {
             setIsKlik(!isKlik);
-        }, 250);
+        }, 350);
     }
 
     const spin = animatedOpacity.interpolate({
@@ -68,11 +55,14 @@ export const CardMetodeBayar = (props) => {
                     </View>
                 </TouchableOpacity>
                 <Animated.View style={{
-                    opacity: animatedOpacity,
+                    opacity: animatedOpacity.interpolate({
+                        inputRange: [0, 1],
+                        outputRange: [0, 1]
+                    }),
                     transform: [{
-                        translateY: transformYAnimated.interpolate({
+                        translateY: animatedOpacity.interpolate({
                             inputRange: [0, 1],
-                            outputRange: [0, -0.1]
+                            outputRange: [0, 1]
                         }),
                     }]
                 }}>
@@ -92,7 +82,7 @@ export const CardMetodeBayar = (props) => {
                                         width: 60,
                                         marginRight: 10,
                                     }}>
-                                        <Image 
+                                        <Image
                                             source={{
                                                 uri: e.imageLink,
                                             }}
@@ -130,7 +120,7 @@ export const CardMetodeBayar = (props) => {
 }
 
 CardMetodeBayar.defaultProps = {
-    onChange: () => {},
+    onChange: () => { },
 }
 
 export const StyleCmb = StyleSheet.create({
