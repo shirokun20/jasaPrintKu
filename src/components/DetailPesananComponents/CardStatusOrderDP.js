@@ -26,7 +26,7 @@ const CardStatusOrderDP = () => {
                                     flexDirection: 'row',
                                     justifyContent: 'space-between',
                                     alignItems: 'flex-start',
-                                }}>
+                                }} key={index}>
                                     <View style={{
                                         alignItems: 'center',
                                         justifyContent: 'center',
