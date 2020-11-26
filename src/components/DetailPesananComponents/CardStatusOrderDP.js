@@ -9,68 +9,65 @@ import { StylePsn } from '../PesanComponents/psnStyle'
 import { SsShadow } from '../SplashScreenComponents/ssShadow'
 
 const CardStatusOrderDP = () => {
-    const [selectedIndex, setSelectedIndex] = React.useState(2);
-    const data = PesanJasaSample.statusPesananData.filter((e) => e.id === selectedIndex);
+    const [selectedIndex, setSelectedIndex] = React.useState(3);
+    const data = PesanJasaSample.statusPesananData.filter((e) => e.id <= selectedIndex);
     return (
         <>
             <View style={[StyleCmb.container, StylePsn.cardFile, SsShadow]}>
                 <View style={[StylePsn.cardBasic]}>
                     <Text style={StylePsn.textHeaderInfo}>Status Pesanan:</Text>
+                    <View style={{
+                        paddingVertical: 5,
+                    }}>
                     {
-                        selectedIndex == 7 ? data.map((e, index) => {
+                        data.slice(0).reverse().map((e, index) => {
                             return (
-                                <View style={[StylePsn.parentContainerCheckbox, {
-                                    backgroundColor: e.bgColor,
-                                    marginBottom: 6,
-                                }]} key={index}>
-                                    <View
-                                        style={StylePsn.containerCheckbox}
-                                    >
-                                        <Text style={[StylePsn.textField, {
-                                            flex: 1,
-                                            fontSize: 16,
-                                            color: e.textColor
-                                        }]}>{e.text}</Text>
-                                        <View style={[StylePsn.checkboxBackground, SsShadow]}>
-                                            <Icon 
-                                                    name="cross"
-                                                    size={20}
-                                                    color={ selectedIndex >= e.id ? e.bgColor : Constant.warnaTransparant}
-                                                />
-                                        </View>
+                                <View style={{
+                                    flexDirection: 'row',
+                                    justifyContent: 'space-between',
+                                    alignItems: 'flex-start',
+                                }}>
+                                    <View style={{
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        marginRight: 5,
+                                    }}>
+                                        <View style={{
+                                            width: 20,
+                                            height: 20,
+                                            borderRadius: 150,
+                                            backgroundColor: index == 0 ? Constant.warnaSemiRed : Constant.warnaGreyLight,
+                                        }} />
+                                        <View 
+                                            style={{
+                                                width: 2,
+                                                height: index == data.length -1 ? 0 : 50,
+                                                backgroundColor: index == 0 ? Constant.warnaSemiRed : Constant.warnaGreyLight,
+                                                alignSelf: 'center',
+                                            }}
+                                        />
                                     </View>
+                                    <View style={{
+                                        flex: 1,
+                                    }}>
+                                        <Text style={{
+                                            fontSize: 17,
+                                            fontWeight: 'bold',
+                                            color: index == 0 ? Constant.warnaSemiRed : Constant.warnaGreyLight,
+                                        }}>{e.text} - Senin, 20 Sep 2020</Text>
+                                        <Text numberOfLines={2} style={{
+                                            color: Constant.warnaGreyLight,
+                                        }}>{e.keterangan}</Text>
+                                    </View>
+                                    <Text style={{
+                                            fontSize: 15,
+                                            color: Constant.warnaGreyLight,
+                                        }}>20:20</Text>
                                 </View>
                             )
-                        }) : PesanJasaSample.statusPesananData.map((e, index) => {
-                            if (e.id < 7) {
-                                return (
-                                    <View style={[StylePsn.parentContainerCheckbox, {
-                                        backgroundColor: e.bgColor,
-                                        marginBottom: 6,
-                                    }]} key={index}>
-                                        <View
-                                            style={StylePsn.containerCheckbox}
-                                        >
-                                            <Text style={[StylePsn.textField, {
-                                                flex: 1,
-                                                fontSize: 16,
-                                                color: e.textColor
-                                            }]}>{e.text}</Text>
-                                            <View style={[StylePsn.checkboxBackground, SsShadow]}>
-                                                <Icon 
-                                                    name="check"
-                                                    size={20}
-                                                    color={ selectedIndex >= e.id ? e.bgColor : Constant.warnaTransparant}
-                                                />
-                                            </View>
-                                        </View>
-                                    </View>
-                                )
-                            } else {
-                                return null;
-                            }
                         })
                     }
+                    </View>
                 </View>
             </View>
         </>
