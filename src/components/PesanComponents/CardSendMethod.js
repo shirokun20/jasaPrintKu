@@ -59,9 +59,8 @@ export const CardSendMethod = (props) => {
     }
 
     return (
-        <View style={[StylePsn.cardFile, SsShadow, StylePsn.backDropRight]}>
-            <View style={[StylePsn.cardBasic, {
-            }]}>
+        <View style={[StylePsn.cardFile]}>
+            <View style={[StylePsn.cardBasic, SsShadow]}>
                 <Text style={StylePsn.textHeaderInfo}>Metode Pengiriman:</Text>
                 <View style={{
                     marginBottom: 5,

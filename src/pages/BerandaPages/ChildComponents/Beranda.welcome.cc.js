@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, Image, Platform } from 'react-native';
+import { Text, View, Image, Platform, Dimensions } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 //
 import { Constant } from '~/constants/index.constants';
@@ -7,6 +7,11 @@ import { SsShadow } from '~/components/SplashScreenComponents/ssShadow';
 import { BcStyle, BcContainer } from '~/components/BerandaComponents/bcData';
 import { SHIRO_ICON } from '~/assets/index.assets';
 import { APP_PEMBUAT, APP_MOTTO } from '../../../config/app.config';
+
+//
+const { height, width } = Dimensions.get('screen');
+//
+const heightTampilanBesar = parseInt(height * (29 / 100));
 //
 const Avatar = (
     <View style={[BcStyle.avatarCard, SsShadow]}>
@@ -48,7 +53,7 @@ const ComponentAtas = (
 );
 const ComponentBawah = (
     <View style={{
-        marginTop: 15,
+        marginTop: width/10 - 15,
         alignItems: 'center',
     }}>
         <Text style={[{

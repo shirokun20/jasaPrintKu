@@ -3,7 +3,6 @@ import { Constant } from "../../constants/index.constants";
 
 export const StylePsn = StyleSheet.create({
     cardFile: {
-        backgroundColor: Constant.warnaSemiRed,
         marginBottom: 10,
         width: '100%',
     },

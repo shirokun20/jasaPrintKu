@@ -10,10 +10,12 @@ const CardSendMethodDP = () => {
     const e = PesanJasaSample.sendMethod[0];
     return (
         <>
-            <View style={[StylePsn.backDropRight, StylePsn.cardFile, SsShadow]}>
-                <View style={[StylePsn.cardBasic]}>
+            <View style={[StylePsn.cardFile]}>
+                <View style={[StylePsn.cardBasic, SsShadow]}>
                     <Text style={StylePsn.textHeaderInfo}>Metode Pengiriman:</Text>
-                    <View style={StylePsn.parentContainerCheckbox}>
+                    <View style={[StylePsn.parentContainerCheckbox, {
+                        marginBottom: 5
+                    }]}>
                         <View
                             style={StylePsn.containerCheckbox}
                         >

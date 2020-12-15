@@ -13,7 +13,9 @@ import { APP_VERSION, APP_PEMBUAT } from '../../config/app.config';
 const AccountScreen = (props) => {
     //
     const HeaderAvatar = (
-        <View style={[BcStyle.avatarCard, SsShadow, Style.headerAvatar]}>
+        <View style={[BcStyle.avatarCard, SsShadow, Style.headerAvatar, {
+            marginRight: 0,
+        }]}>
             <Image
                 style={{
                     width: 40,
@@ -29,7 +31,8 @@ const AccountScreen = (props) => {
     const HeaderText = (
         <View style={{
             justifyContent: 'flex-start',
-            width: '70%'
+            width: '70%',
+            left: -15,
         }}>
             <Text style={[{
                 color: Constant.warnaPutih,
@@ -110,10 +113,10 @@ const AccountScreen = (props) => {
     //
     const Content = (
         <View>
-            <ContentKhusus
+            {/* <ContentKhusus
                 leftText="Transaksi"
                 rightText="10"
-            />
+            /> */}
             {HeaderContent('PENGATURAN APLIKASI')}
             <ContentKhusus
                 leftText="Pengaturan Profil"

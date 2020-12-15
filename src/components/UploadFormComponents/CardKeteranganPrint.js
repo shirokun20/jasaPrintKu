@@ -8,14 +8,8 @@ import { Constant } from '../../constants/index.constants'
 //
 const CardKeteranganPrint = (props) => {
     return (
-        <View style={[StylePsn.cardFile, {
-            paddingLeft: 4,
-            borderTopEndRadius: 11,
-            borderBottomEndRadius: 11,
-            borderTopStartRadius: 15,
-            borderBottomStartRadius: 15,
-        }, SsShadow]}>
-            <View style={[StylePsn.cardBasic]}>
+        <View style={[StylePsn.cardFile]}>
+            <View style={[StylePsn.cardBasic, SsShadow]}>
                 <Text style={[StylePsn.textHeaderInfo]}>Keterangan:</Text>
                 <View style={{
                     marginBottom: 5,

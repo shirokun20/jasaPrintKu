@@ -13,8 +13,8 @@ const CardStatusOrderDP = () => {
     const data = PesanJasaSample.statusPesananData.filter((e) => e.id <= selectedIndex);
     return (
         <>
-            <View style={[StyleCmb.container, StylePsn.cardFile, SsShadow]}>
-                <View style={[StylePsn.cardBasic]}>
+            <View style={[StylePsn.cardFile]}>
+                <View style={[StylePsn.cardBasic, SsShadow]}>
                     <Text style={StylePsn.textHeaderInfo}>Status Pesanan:</Text>
                     <View style={{
                         paddingVertical: 5,

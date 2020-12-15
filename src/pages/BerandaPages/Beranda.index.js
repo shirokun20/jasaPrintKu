@@ -119,20 +119,22 @@ const BerandaScreen = (props) => {
     }) => {
         return (
             <TouchableOpacity style={[{
-                backgroundColor: (index + 1) % 2 == 1 ? Constant.warnaSemiRed : Constant.warnaAlertSuccess,
+                // // backgroundColor: (index + 1) % 2 == 1 ? Constant.warnaSemiRed : Constant.warnaAlertSuccess,
                 width: '100%',
-                marginBottom: 10,
-                marginTop: 1,
-                borderTopRightRadius: 10,
-                borderBottomRightRadius: 10,
-                borderTopLeftRadius: 6,
-                borderBottomLeftRadius: 6,
-                paddingRight: 5,
-            }, SsShadow]} activeOpacity={0.95} onPress={() => { }}>
+                // marginBottom: 10,
+                // marginTop: 1,
+                // borderTopRightRadius: 10,
+                // borderBottomRightRadius: 10,
+                // borderTopLeftRadius: 6,
+                // borderBottomLeftRadius: 6,
+                // paddingRight: 5,
+            }]} activeOpacity={0.95} onPress={() => { }}>
                 <View style={[{
                     backgroundColor: Constant.warnaPutih,
-                    borderRadius: 5.5,
-                }]} >
+                    borderRadius: 10,
+                    marginBottom: 10,
+                    marginTop: 1,
+                }, SsShadow]}>
                     <View style={{
                         flexDirection: 'row',
                         justifyContent: 'space-between',

@@ -111,8 +111,8 @@ const CardFile = ({
     keteranganFull = false,
 }) => {
     return (
-        <View style={[Style.container, StylePsn.cardFile, SsShadow]}>
-            <View style={[StylePsn.cardBasic]}>
+        <View style={[StylePsn.cardFile]}>
+            <View style={[StylePsn.cardBasic, SsShadow]}>
                 <Text style={StylePsn.textHeaderInfo}>File yang akan di print {btnFileVisible ? '(Max 3) ' : null}:</Text>
                 <CardUploadFile
                     filename="tolong-print.pdf"

@@ -22,14 +22,8 @@ const CardUpload = ({
     }, [isFile]);
 
     return (
-        <View style={[StylePsn.cardFile, {
-            paddingRight: 4,
-            borderTopEndRadius: 15,
-            borderBottomEndRadius: 15,
-            borderTopStartRadius: 11,
-            borderBottomStartRadius: 11,
-        }, SsShadow]}>
-            <View style={[StylePsn.cardBasic]}>
+        <View style={[StylePsn.cardFile]}>
+            <View style={[StylePsn.cardBasic, SsShadow]}>
                 <Animated.View style={{
                     transform: [{
                         scale: animasi

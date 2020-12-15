@@ -82,14 +82,8 @@ const CarAturHalamanPrint = () => {
     }
 
     return (
-        <View style={[StylePsn.cardFile, {
-            paddingRight: 4,
-            borderTopEndRadius: 15,
-            borderBottomEndRadius: 15,
-            borderTopStartRadius: 11,
-            borderBottomStartRadius: 11,
-        }, SsShadow]}>
-            <View style={[StylePsn.cardBasic]}>
+        <View style={[StylePsn.cardFile]}>
+            <View style={[StylePsn.cardBasic, SsShadow]}>
                 <Text style={[StylePsn.textHeaderInfo]}>Atur Page/Halaman:</Text>
                 <View style={{
                     marginBottom: 5,

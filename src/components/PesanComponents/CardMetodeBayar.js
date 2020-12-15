@@ -36,8 +36,8 @@ export const CardMetodeBayar = (props) => {
     })
 
     return (
-        <View style={[StyleCmb.container, StylePsn.cardFile, SsShadow]}>
-            <View style={[StylePsn.cardBasic]}>
+        <View style={[StylePsn.cardFile]}>
+            <View style={[StylePsn.cardBasic, SsShadow]}>
                 <Text style={StylePsn.textHeaderInfo}>Metode Pembayaran</Text>
                 <TouchableOpacity style={StylePsn.containerInfo} activeOpacity={0.9} onPress={() => metodePembayaranKlik()}>
                     <View style={StyleCmb.childContainer}>

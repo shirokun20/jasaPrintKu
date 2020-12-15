@@ -35,14 +35,8 @@ export const CardInfoBayar = ({
 
 }) => {
     return (
-        <View style={[StylePsn.cardFile, SsShadow, {
-            paddingLeft: 4,
-            borderTopEndRadius: 11,
-            borderBottomEndRadius: 11,
-            borderTopStartRadius: 15,
-            borderBottomStartRadius: 15,
-        }]}>
-            <View style={[StylePsn.cardBasic]}>
+        <View style={[StylePsn.cardFile]}>
+            <View style={[StylePsn.cardBasic, SsShadow]}>
                 <Text style={StylePsn.textHeaderInfo}>Info Pembayaran:</Text>
                 <View style={{
                     marginBottom: 5,
